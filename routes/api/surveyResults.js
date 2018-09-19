@@ -11,7 +11,7 @@ let twoFingers = 0;
 let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
-const fistLog = 'results = fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers;
+let fistLog = 'results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers;
 
 // post request
 // posting survey form on slack
