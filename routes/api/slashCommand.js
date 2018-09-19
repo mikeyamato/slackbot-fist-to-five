@@ -6,6 +6,7 @@ const foodEmoji = require('../../assets/foodEmoji');
 
 
 // post request
+// posting survey form on slack
 router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
 	const requestType = req.body.command;

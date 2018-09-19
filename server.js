@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const slashCommand = require('./routes/api/slashCommand');
-// const survey = require('./routes/api/survey');
+const surveyResults = require('./routes/api/surveyResults');
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 // use routes
 app.use('/api/slash', slashCommand);
-// app.use('/api/survey', survey);
+app.use('/api/survey', surveyResults);
 
 const port = process.env.PORT || 4000;
 
