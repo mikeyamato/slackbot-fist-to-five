@@ -1,12 +1,24 @@
 module.exports = {
 	"attachments": [
 		{
-				"fallback": "Network traffic (kb/s): How does this look? @slack-ops - Sent by Julie Dodd - https://datadog.com/path/to/event",
-				"title": "Network traffic (kb/s)",
-				"title_link": "https://datadog.com/path/to/event",
-				"text": "How does this look? @slack-ops - Sent by Julie Dodd",
-				"url": "https://www.youtube.com/embed/hlH9RGLJqxE",
-				"color": "#764FA5"
+				"fallback": "All the important info for screen readers",
+				"title": "Thanks for casting your vote",
+				"title_link": "https://www.google.com",
+				"text": "What does this look like?",
+				"fields": [
+					{
+							"title": "Some",
+							"value": "Example",
+							"short": true
+					},
+					{
+						"title": "Another",
+						"value": "Greate Example",
+						"short": true
+					}
+				],
+				"image-url": "https://media.giphy.com/media/Vccpm1O9gV1g4/giphy.gif",
+				"color": "#764FA5",
 		}
 	]
 }
