@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 	// console.log('**** 1', survey);
 	// console.log('**** 2', survey.actions); 
 	// console.log('**** 3', survey.actions[0].selected_options);
-	console.log('**** 4', survey.actions[0].selected_options.value);
+	console.log('**** 4', survey.actions[0].selected_options[0].value);
 	console.log('**** 5', survey.user.name);
 
 
