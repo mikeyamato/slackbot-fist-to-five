@@ -26,7 +26,7 @@ module.exports = {
               "value": "two_finger"
 						},
 						{
-							"text": "3 fingers (I somewhat get it but need more exposure)",
+							"text": "3 fingers (I somewhat get it)",
               "value": "three_finger"
 						},
 						{

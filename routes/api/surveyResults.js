@@ -12,8 +12,8 @@ router.post('/', (req, res) => {
 	const survey = JSON.parse(req.body.payload);
 
 	console.log('**** 1', survey);
-	// console.log('**** 2', req.body.payload.callback_id); 
-	// console.log('**** 3', secondRequest.callback_id);
+	console.log('**** 2', survey.actions); 
+	console.log('**** 3', survey.actions[0].selected_options);
 
 	// if(req.body.payload){
 	// 	res.status(200).send(
