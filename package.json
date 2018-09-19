@@ -1,0 +1,26 @@
+{
+  "name": "slackbot-fist-to-five",
+  "version": "1.0.0",
+  "description": "Fist to Five Survey Via Slack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeyamato/slackbot-fist-to-five.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikeyamato/slackbot-fist-to-five/issues"
+  },
+  "homepage": "https://github.com/mikeyamato/slackbot-fist-to-five#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
