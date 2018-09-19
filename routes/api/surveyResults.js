@@ -11,6 +11,7 @@ let twoFingers = 0;
 let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
+const fistLog = 'results = fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers;
 
 // post request
 // posting survey form on slack
@@ -33,42 +34,42 @@ router.post('/', (req, res) => {
 				surveyA
 			);
 			fist += 1;
-			console.log('result - fist', fist);
+			console.log(fistLog);
 			break;
     case 'one_finger':
 			res.status(200).send(
 				surveyA
 			);
 			oneFinger += 1;
-			console.log('result - oneFinger', oneFinger);
+			console.log(fistLog);
 			break;
 		case 'two_finger':
 			res.status(200).send(
 				surveyA
 			);
 			twoFingers += 1;
-			console.log('result - twoFingers', twoFingers);
+			console.log(fistLog);
 			break;
 		case 'three_finger':
 			res.status(200).send(
 				surveyA
 			);
 			threeFingers += 1;
-			console.log('result - threeFingers', threeFingers);
+			console.log(fistLog);
 			break;
 		case 'four_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fourFingers += 1;
-			console.log('result - fourFingers', fourFingers);
+			console.log(fistLog);
 			break;
 		case 'five_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fiveFingers += 1;
-			console.log('result - fiveFingers', fiveFingers);
+			console.log(fistLog);
 			break;
     default:
 			res.status(200).send(
