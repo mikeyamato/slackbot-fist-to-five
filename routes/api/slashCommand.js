@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const surveyQ = require('../../templates/surveyQ.json');
+const surveyQ = require('../../templates/surveyQ');
 const foodEmoji = require('../../assets/foodEmoji');
 
 
@@ -11,12 +11,14 @@ router.post('/', (req, res) => {
 	const requestType = req.body.command;
 
 	// console.log('**** 1', req)
-	console.log('**** 2', req.body);
+	// console.log('**** 2', req.body);
 	// console.log('**** 3', requestType);
 
 	if(requestType === '/fist'){
 		res.status(200).send(
-			surveyQ `\n${singleFoodEmoji}`
+			{
+				surveyQ
+			}
 	)} else {
 		res.status(200).send(
 		{

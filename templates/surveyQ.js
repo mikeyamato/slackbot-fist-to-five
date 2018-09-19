@@ -1,4 +1,4 @@
-{
+module.exports = {
 	"text": "Fist to Five Survey Time!",
 	"attachments": [
 		{
