@@ -9,12 +9,43 @@ module.exports = {
 			"color": "#FF9DBB",
 			"actions": [
 				{
-					"name": "fist_zero",
-					"text": ":fist-zero:",
-					"type": "button",
-					"style": "default"
-				},
-				{
+					"name": "fist_select",
+					"text": "Choose one...",
+					"type": "select",
+					"options": [
+						{
+							"text": "Fist",
+              "value": "fist"
+						},
+						{
+							"text": "1 finger",
+              "value": "one_finger"
+						},
+						{
+							"text": "2 fingers",
+              "value": "two_finger"
+						},
+						{
+							"text": "3 fingers",
+              "value": "three_finger"
+						},
+						{
+							"text": "4 fingers",
+              "value": "four_finger"
+						},
+						{
+							"text": "5 fingers",
+              "value": "five_finger"
+						},
+					]
+				}
+			]
+		}
+	]
+}
+
+/*
+{
 					"name": "fist_one",
 					"text": ":fist-one:",
 					"type": "button",
@@ -44,7 +75,4 @@ module.exports = {
 					"type": "button",
 					"style": "default"
 				}
-			]
-		}
-	]
-}
+*/
