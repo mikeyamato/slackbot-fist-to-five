@@ -2,8 +2,8 @@ module.exports = {
 	"text": "Fist to Five Survey Time!",
 	"attachments": [
 		{
-			"title": "How well are you understanding the material? \nFist = \"Ahh! I\'m lost.\" \nFive = \"I understand it 100%.\"",
-			"fallback": "How well are you understanding the material? \nFist = \"Ahh! I\'m lost.\" \nFive = \"I understand it 100%.\"",
+			"title": "How well are you understanding the material? \nFist = \"Ahh! I'm lost.\" \nFive = \"I understand it 100%.\"",
+			"fallback": "How well are you understanding the material? \nFist = \"Ahh! I'm lost.\" \nFive = \"I understand it 100%.\"",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
 			"color": "#FF9DBB",
@@ -39,7 +39,10 @@ module.exports = {
 						},
 					],
 					"confirm": {
-						"ok_text": "Select"
+						"title": "Are you sure?",
+						"text": "Just making sure.",
+						"ok_text": "Select",
+						"dismiss_text": "Cancel"
 					}
 				}
 			]
