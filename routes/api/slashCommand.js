@@ -16,9 +16,7 @@ router.post('/', (req, res) => {
 
 	if(requestType === '/fist'){
 		res.status(200).send(
-			{
 				surveyQ
-			}
 	)} else {
 		res.status(200).send(
 		{
