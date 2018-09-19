@@ -14,23 +14,23 @@ module.exports = {
 					"type": "select",
 					"options": [
 						{
-							"text": "Fist (Ahh! I'm lost.)",
+							"text": "Fist (Help, I'm lost)",
               "value": "fist"
 						},
 						{
-							"text": "1 finger",
+							"text": "1 finger (I barely understand)",
               "value": "one_finger"
 						},
 						{
-							"text": "2 fingers",
+							"text": "2 fingers (I'm starting to understand)",
               "value": "two_finger"
 						},
 						{
-							"text": "3 fingers",
+							"text": "3 fingers (I somewhat get it but need more exposure)",
               "value": "three_finger"
 						},
 						{
-							"text": "4 fingers",
+							"text": "4 fingers (I'm comfortable with the idea)",
               "value": "four_finger"
 						},
 						{
@@ -39,7 +39,7 @@ module.exports = {
 						},
 					],
 					"confirm": {
-						"title": "Are you sure? :wink:",
+						"title": "Are you sure?",
 						"text": "Just making sure. :wink:",
 						"ok_text": "Select",
 						"dismiss_text": "Cancel"
