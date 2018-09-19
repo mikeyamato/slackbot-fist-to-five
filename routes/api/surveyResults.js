@@ -11,7 +11,7 @@ let twoFingers = 0;
 let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
-// let fistLog = 'results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers;
+var fistLog = 'results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers;
 
 // post request
 // posting survey form on slack
@@ -34,14 +34,14 @@ router.post('/', (req, res) => {
 				surveyA
 			);
 			fist += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			console.log(fistLog);
 			break;
     case 'one_finger':
 			res.status(200).send(
 				surveyA
 			);
 			oneFinger += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			console.log(fistLog);
 			break;
 		case 'two_finger':
 			res.status(200).send(
