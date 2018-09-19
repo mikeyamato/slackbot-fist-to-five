@@ -40,14 +40,15 @@ module.exports = {
 					],
 					"confirm": {
 						"title": "Are you sure?",
-						"text": "Just making sure. :wink:",
+						"text": "Just wanted to confirm. :nerd_face:",
 						"ok_text": "Select",
 						"dismiss_text": "Cancel"
 					}
 				}
 			]
 		}
-	]
+	],
+	"response_type": "in_channel"
 }
 
 /*
