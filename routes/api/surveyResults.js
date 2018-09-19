@@ -11,6 +11,7 @@ router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
 	const survey = JSON.parse(req.body.payload);
 
+	console.log('**** 0', req.body)
 	// console.log('**** 1', survey);
 	// console.log('**** 2', survey.actions); 
 	// console.log('**** 3', survey.actions[0].selected_options);
