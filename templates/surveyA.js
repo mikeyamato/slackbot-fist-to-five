@@ -7,13 +7,13 @@ module.exports = {
 				"text": "What does this look like?",
 				"fields": [
 					{
-							"title": "Some",
-							"value": "Example",
-							"short": true
+						"title": "Some",
+						"value": "Example",
+						"short": true
 					},
 					{
 						"title": "Another",
-						"value": "Greate Example",
+						"value": "Great Example",
 						"short": true
 					}
 				],
@@ -22,6 +22,3 @@ module.exports = {
 		}
 	]
 }
-
-
-{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/hlH9RGLJqxE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
