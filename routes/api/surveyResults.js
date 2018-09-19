@@ -5,12 +5,12 @@ const surveyA = require('../../templates/surveyA');
 const foodEmoji = require('../../assets/foodEmoji');
 
 // note: need to zero out results when slash command gets called
-const fist = 0;
-const oneFinger = 0;
-const twoFingers = 0;
-const threeFingers = 0;
-const fourFingers = 0;
-const fiveFingers = 0;
+let fist = 0;
+let oneFinger = 0;
+let twoFingers = 0;
+let threeFingers = 0;
+let fourFingers = 0;
+let fiveFingers = 0;
 
 // post request
 // posting survey form on slack
