@@ -11,7 +11,7 @@ let twoFingers = 0;
 let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
-var fistLog = 'results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers;
+
 
 // post request
 // posting survey form on slack
@@ -34,42 +34,42 @@ router.post('/', (req, res) => {
 				surveyA
 			);
 			fist += 1;
-			console.log(fistLog);
+			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
 			break;
     case 'one_finger':
 			res.status(200).send(
 				surveyA
 			);
 			oneFinger += 1;
-			console.log(fistLog);
+			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
 			break;
 		case 'two_finger':
 			res.status(200).send(
 				surveyA
 			);
 			twoFingers += 1;
-			console.log(fistLog);
+			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
 			break;
 		case 'three_finger':
 			res.status(200).send(
 				surveyA
 			);
 			threeFingers += 1;
-			console.log(fistLog);
+			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
 			break;
 		case 'four_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fourFingers += 1;
-			console.log(fistLog);
+			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
 			break;
 		case 'five_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fiveFingers += 1;
-			console.log(fistLog);
+			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
 			break;
     default:
 			res.status(200).send(
