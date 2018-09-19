@@ -14,7 +14,7 @@ module.exports = {
 					"type": "select",
 					"options": [
 						{
-							"text": "Fist :fist_zero:",
+							"text": "Fist (Ahh! I'm lost.)",
               "value": "fist"
 						},
 						{
@@ -34,13 +34,13 @@ module.exports = {
               "value": "four_finger"
 						},
 						{
-							"text": "5 fingers",
+							"text": "5 fingers (I understand this 100%)",
               "value": "five_finger"
 						},
 					],
 					"confirm": {
-						"title": "Are you sure?",
-						"text": "Just making sure.",
+						"title": "Are you sure? :wink:",
+						"text": "Just making sure. :wink:",
 						"ok_text": "Select",
 						"dismiss_text": "Cancel"
 					}
