@@ -41,8 +41,8 @@ module.exports = {
 					"confirm": {
 						"title": "Are you sure?",
 						"text": "Just wanted to confirm. :nerd_face:",
-						"ok_text": "Select",
-						"dismiss_text": "Cancel"
+						"ok_text": "Yes, I'm sure",
+						"dismiss_text": "No, I'm not sure"
 					}
 				}
 			]
