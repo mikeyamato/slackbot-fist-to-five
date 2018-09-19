@@ -14,7 +14,7 @@ module.exports = {
 					"type": "select",
 					"options": [
 						{
-							"text": "Fist",
+							"text": "Fist :fist_zero:",
               "value": "fist"
 						},
 						{
@@ -37,7 +37,10 @@ module.exports = {
 							"text": "5 fingers",
               "value": "five_finger"
 						},
-					]
+					],
+					"confirm": {
+						"ok_text": "Select"
+					}
 				}
 			]
 		}
