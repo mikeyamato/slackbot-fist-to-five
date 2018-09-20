@@ -106,13 +106,16 @@ function postSurvey(){
 	const userPortion = '&user=U9GCKCVL7'; // recipient
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 	const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+	const textPortionJSON = `"text": "results...\n"fist: ${fist} \none finger: ${oneFinger} \ntwo fingers: ${twoFingers} \nthree fingers: ${threeFingers} \nfour fingers: ${fourFingers} \nfive fingers: ${fiveFingers}`;
 	
 	const postSurveyResults = {
 		uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
-		body: '&text='+textPortion,
+		body: '&text='+textPortionJSON,
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded'
+			// select ONE
+			// 'Content-Type': 'application/x-www-form-urlencoded' 
+			'Content-Type': 'application/json'
 		}
 	}
 	request(postSurveyResults, function (error, response) {
