@@ -16,13 +16,7 @@ let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
 
-/***** POST survey results to Slack *****/
-const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
-const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
-const channelPortion = '&channel=C9FEK4T0D';
-const userPortion = '&user=U9GCKCVL7'; // recipient
-const prettyPortion = '&pretty=1';  // no documentation availble about what this does
-/****************************************/
+
 
 
 // post request
@@ -49,7 +43,7 @@ router.post('/', (req, res) => {
 			)
 			fist += 1;
 
-			blah();
+			postSurvey();
 
 			break;
     case 'one_finger':
@@ -106,7 +100,16 @@ router.post('/', (req, res) => {
 	// )}
 })
 
-function blah(){
+function postSurvey(){
+
+	/***** POST survey results to Slack *****/
+	const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
+	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
+	const channelPortion = '&channel=C9FEK4T0D';
+	const userPortion = '&user=U9GCKCVL7'; // recipient
+	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
+	/****************************************/
+
 	/***** POST survey results to Slack *****/
 	// variable placed here to update template literals
 	const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
