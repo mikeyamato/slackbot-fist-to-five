@@ -107,22 +107,27 @@ function postSurvey(){
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 	const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 	
-	const textPortionJSON = JSON.stringify({"attachments": [{"pretext": "Results...", "text": `fist: ${fist} \none finger: ${oneFinger} \ntwo fingers: ${twoFingers} \nthree fingers: ${threeFingers} \nfour fingers: ${fourFingers} \nfive fingers: ${fiveFingers}`}]});
+	const textPortionJSON = JSON.stringify([{"pretext": "Results...", "text": `fist: ${fist} \none finger: ${oneFinger} \ntwo fingers: ${twoFingers} \nthree fingers: ${threeFingers} \nfour fingers: ${fourFingers} \nfive fingers: ${fiveFingers}`}]);
 	
 	const postSurveyResults = {
 		uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
-		body: '&text='+textPortionJSON,
+		/***** select ONE *****/
+		// body: '&text='+textPortion,
+		body: '&attachments='+textPortionJSON,
+		/**********************/
+
 		method: 'POST',
 		headers: {
 			/***** select ONE *****/
 			// 'Content-Type': 'application/x-www-form-urlencoded' 
 			'Content-Type': 'application/json; charset=utf-8'
+			/**********************/
 		}
 	}
 	request(postSurveyResults, function (error, response) {
 		console.log('**** error,response', error,response.body);
 
-		console.log('############### response', response)
+		// console.log('############### response', response)
 		
 		return;
 	});
