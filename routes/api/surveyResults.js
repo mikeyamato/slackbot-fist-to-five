@@ -115,7 +115,7 @@ function postSurvey(){
 	
 
 	const postSurveyResults = {
-		uri: methodUrlPortion+channelPortion+userPortion+prettyPortion+textPortionJSON,
+		uri: methodUrlPortion+channelPortion+userPortion+textPortionJSON+prettyPortion,
 		/***** select ONE *****/
 		// body: '&text='+textPortion,
 		// body: '&attachments='+textPortionJSON,
