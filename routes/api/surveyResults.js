@@ -107,7 +107,7 @@ function postSurvey(){
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 	const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 	
-	const textPortionJSON = encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
+	const textPortionJSON = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
 	
 	// [{"pretext": "pre-hello", "text": "fist: 1 \n fist: 2"}]
 	// [{"pretext": "Results...", "text": "fist: 0 \n one finger: 1 \n two fingers: 2 \n three fingers: 3"}]
@@ -115,10 +115,10 @@ function postSurvey(){
 	
 
 	const postSurveyResults = {
-		uri: methodUrlPortion+channelPortion+userPortion+prettyPortion,
+		uri: methodUrlPortion+channelPortion+userPortion+prettyPortion+textPortionJSON,
 		/***** select ONE *****/
 		// body: '&text='+textPortion,
-		body: '&attachments='+textPortionJSON,
+		// body: '&attachments='+textPortionJSON,
 		/**********************/
 		method: 'POST',
 		headers: {
