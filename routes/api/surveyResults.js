@@ -5,8 +5,8 @@ const router = express.Router();
 const surveyA = require('../../templates/surveyA');
 const foodEmoji = require('../../assets/foodEmoji');
 
-const slackToken = require('../../config/keys_prod');
-console.log('**** token', slackToken.slackToken);
+const slackTokenPath = require('../../config/keys_prod');
+// console.log('**** token', slackToken.slackTokenUser);
 
 // TODO: need to zero out results when `slashCommand.js` gets called
 // TODO: push to object?
@@ -41,34 +41,27 @@ router.post('/', (req, res) => {
 			fist += 1;
 
 			const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
-			const slackTokenPortion = '?token=' + slackToken.slackToken;
+			const slackTokenPortion = '?token=' + slackTokenPath.slackTokenUser;  // from user
 			const channelPortion = '&channel=C9FEK4T0D';
 			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 			const userPortion = '&user=U9GCKCVL7'; // recipient
 			const prettyPortion = '&pretty=1';
-			// const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
 			
 			
-				var clientServerOptions = {
-					uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion,
-					body: '&text='+textPortion,
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded'
-					}
+			var clientServerOptions = {
+				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion,
+				body: '&text='+textPortion,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
 				}
-				request(clientServerOptions, function (error, response) {
-					console.log('**** error,response', error,response.body);
-					return;
-				});
+			}
+			request(clientServerOptions, function (error, response) {
+				console.log('**** error,response', error,response.body);
+				return;
+			});
 			
 
-
-
-			// request.post({postEphemeralUrl}, function (error, response) {
-			// 	console.log('**** error,response', error,response);
-			// 	return;
-			// });
 
 			break;
     case 'one_finger':
@@ -127,15 +120,7 @@ router.post('/', (req, res) => {
 
 module.exports = router;
 
-/*
-const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
-const slackTokenPortion = '?token=' + slackToken;
-const channelPortion = '&channel=C9FEK4T0D';
-const textPortion = '&text=results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers';
-const userPortion = '&user=U9GCKCVL7'; // recipient
-const prettyPortion = '&pretty=1';
-const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
-*/
+
 
 
 
@@ -160,9 +145,5 @@ function updateClient(postData){
 	});
 }
 
-request('http://www.google.com', function (error, response, body) {
-  console.log('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-});
+
 */
