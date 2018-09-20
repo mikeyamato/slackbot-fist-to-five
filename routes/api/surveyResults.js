@@ -110,12 +110,12 @@ function postSurvey(){
 	const textPortionJSON = `'[{"pretext": "Results...", "text": "fist": ${fist} \n"one finger": ${oneFinger} \n"two fingers": ${twoFingers} \n"three fingers": ${threeFingers} \n"four fingers": ${fourFingers} \n"five fingers": ${fiveFingers}}]'`;
 	
 	const postSurveyResults = {
-		uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
+		uri: methodUrlPortion+channelPortion+userPortion+prettyPortion,
 		/***** select ONE *****/
 		// body: '&text='+textPortion,
 		body: '&attachments='+textPortionJSON,
 		/**********************/
-
+		Authorization: 'Bearer ' + slackTokenPortion,
 		method: 'POST',
 		headers: {
 			/***** select ONE *****/
