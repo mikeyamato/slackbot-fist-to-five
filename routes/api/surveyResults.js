@@ -121,13 +121,19 @@ function postSurvey(){
 		// body: '&attachments='+textPortionJSON,
 		/**********************/
 		method: 'POST',
-		headers: {
+		headers: [
+			{
 			/***** select ONE *****/
 			// 'Content-Type': 'application/x-www-form-urlencoded' 
-			'Content-Type': 'application/json; charset=utf-8',
+				name: 'Content-Type',
+				value: 'application/json; charset=utf-8'
 			/**********************/
-			"Authorization": 'Bearer ' + slackTokenPath.slackTokenBot
-		}
+			},
+			{
+				name: 'Authorization',
+				value: 'Bearer ' + slackTokenPath.slackTokenBot
+			}
+		]
 	}
 	request(postSurveyResults, function (error, response) {
 		console.log('**** error,response', error,response.body);
