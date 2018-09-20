@@ -6,6 +6,7 @@ const surveyA = require('../../templates/surveyA');
 const foodEmoji = require('../../assets/foodEmoji');
 
 const slackToken = require('../../config/keys_prod');
+console.log('**** token', slackToken.slackToken);
 
 // TODO: need to zero out results when `slashCommand.js` gets called
 // TODO: push to object?
@@ -40,7 +41,7 @@ router.post('/', (req, res) => {
 			fist += 1;
 
 			const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
-			const slackTokenPortion = '?token=' + slackToken;
+			const slackTokenPortion = '?token=' + slackToken.slackToken;
 			const channelPortion = '&channel=C9FEK4T0D';
 			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 			const userPortion = '&user=U9GCKCVL7'; // recipient
@@ -57,7 +58,7 @@ router.post('/', (req, res) => {
 					}
 				}
 				request(clientServerOptions, function (error, response) {
-					console.log('**** error,response', error,response);
+					console.log('**** error,response', error,response.body);
 					return;
 				});
 			
