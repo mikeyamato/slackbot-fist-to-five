@@ -1,11 +1,10 @@
 module.exports = {
 	"attachments": [
 		{
-				"fallback": "All the important info for screen readers",
+				"fallback": "Thanks for answering the survey.",
 				"title": "Thanks for participating :relaxed:\n",
-				"title_link": "https://www.google.com",
-				"text": "What does this look like?",
-				"text_link": "https://www.google.com",  // does this work?
+				"title_link": "https://youtu.be/dU1xS07N-FA",
+				// "text": "Extra space to write something.",
 				// "fields": [
 				// 	{
 				// 		"title": "Some",
