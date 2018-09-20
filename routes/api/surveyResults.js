@@ -1,10 +1,14 @@
 const express = require('express');
+var request = require('request');
 const router = express.Router();
 
 const surveyA = require('../../templates/surveyA');
 const foodEmoji = require('../../assets/foodEmoji');
 
+const slackToken = require('../../config/keys_prod');
+
 // TODO: need to zero out results when `slashCommand.js` gets called
+// TODO: push to object?
 let fist = 0;
 let oneFinger = 0;
 let twoFingers = 0;
@@ -32,10 +36,22 @@ router.post('/', (req, res) => {
 		case 'fist':
 			res.status(200).send(
 				surveyA
-			);
+			)
 			fist += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
-			console.log('**** this', this);
+
+			const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
+			const slackTokenPortion = '?token=' + slackToken;
+			const channelPortion = '&channel=C9FEK4T0D';
+			const textPortion = `&text=results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			const userPortion = '&user=U9GCKCVL7'; // recipient
+			const prettyPortion = '&pretty=1';
+			const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
+
+			request.post({postEphemeralUrl}, function (error, response) {
+				console.log('**** error,response.body', error,response.body);
+				return;
+			});
+
 			break;
     case 'one_finger':
 			res.status(200).send(
@@ -92,3 +108,43 @@ router.post('/', (req, res) => {
 })
 
 module.exports = router;
+
+/*
+const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
+const slackTokenPortion = '?token=' + slackToken;
+const channelPortion = '&channel=C9FEK4T0D';
+const textPortion = '&text=results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers';
+const userPortion = '&user=U9GCKCVL7'; // recipient
+const prettyPortion = '&pretty=1';
+const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
+*/
+
+// https://slack.com/api/chat.postEphemeral?token=xoxp-320823214209-322427437687-438546674048-eb84f0037854b07fd890a1a89f8077b3&channel=C9FEK4T0D&text=Hello&user=U9GCKCVL7&pretty=1
+
+// https://api.slack.com/methods/chat.postEphemeral/test
+
+// https://stackoverflow.com/questions/32327858/how-to-send-a-post-request-from-node-js-express
+
+
+/*
+function updateClient(postData){
+	var clientServerOptions = {
+		uri: 'http://'+clientHost+''+clientContext,
+		body: JSON.stringify(postData),
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}
+	request(clientServerOptions, function (error, response) {
+		console.log(error,response.body);
+		return;
+	});
+}
+
+request('http://www.google.com', function (error, response, body) {
+  console.log('error:', error); // Print the error if one occurred
+  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+  console.log('body:', body); // Print the HTML for the Google homepage.
+});
+*/
