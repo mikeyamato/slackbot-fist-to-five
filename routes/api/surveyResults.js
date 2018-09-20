@@ -4,7 +4,7 @@ const router = express.Router();
 const surveyA = require('../../templates/surveyA');
 const foodEmoji = require('../../assets/foodEmoji');
 
-// note: need to zero out results when slash command gets called
+// TODO: need to zero out results when `slashCommand.js` gets called
 let fist = 0;
 let oneFinger = 0;
 let twoFingers = 0;
@@ -35,6 +35,7 @@ router.post('/', (req, res) => {
 			);
 			fist += 1;
 			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			console.log('**** window', window);
 			break;
     case 'one_finger':
 			res.status(200).send(
