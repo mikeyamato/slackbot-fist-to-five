@@ -2,14 +2,14 @@ module.exports = {
 	"text": "What time is it? It's Fist-to-Five survey time! Yay! :tada:",
 	"attachments": [
 		{
-			"title": "100% anonymous",
+			"title": "How well are you understaning this material?\n\n100% anonymous",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
 			"color": "#FF9DBB",
 			"actions": [
 				{
 					"name": "fist_select",
-					"text": "Please select one...",
+					"text": "Select one...",
 					"type": "select",
 					"options": [
 						{
