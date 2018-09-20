@@ -127,7 +127,7 @@ function postSurvey(){
 	request(postSurveyResults, function (error, response) {
 		console.log('**** error,response', error,response.body);
 
-		// console.log('############### response', response)
+		console.log('############### textPortionJSON', textPortionJSON)
 		
 		return;
 	});
