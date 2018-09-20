@@ -21,7 +21,7 @@ const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update w
 const channelPortion = '&channel=C9FEK4T0D';
 
 const userPortion = '&user=U9GCKCVL7'; // recipient
-const prettyPortion = '&pretty=1';
+const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
 
 // post request
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
 			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 			
 			var clientServerOptions = {
-				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion,
+				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
 				body: '&text='+textPortion,
 				method: 'POST',
 				headers: {
