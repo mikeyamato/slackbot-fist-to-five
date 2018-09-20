@@ -49,12 +49,11 @@ router.post('/', (req, res) => {
 			)
 			fist += 1;
 
-
 			/***** POST survey results to Slack *****/
 			// variable placed here to update template literals
 			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 			
-			const clientServerOptions = {
+			const postSurveyResults = {
 				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
 				body: '&text='+textPortion,
 				method: 'POST',
@@ -62,12 +61,11 @@ router.post('/', (req, res) => {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				}
 			}
-			request(clientServerOptions, function (error, response) {
+			request(postSurveyResults, function (error, response) {
 				console.log('**** error,response', error,response.body);
 				return;
 			});
 			/****************************************/
-
 
 			break;
     case 'one_finger':
@@ -75,35 +73,125 @@ router.post('/', (req, res) => {
 				surveyA
 			);
 			oneFinger += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+
+			/***** POST survey results to Slack *****/
+			// variable placed here to update template literals
+			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			
+			const postSurveyResults = {
+				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
+				body: '&text='+textPortion,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}
+			request(postSurveyResults, function (error, response) {
+				console.log('**** error,response', error,response.body);
+				return;
+			});
+			/****************************************/
+
 			break;
 		case 'two_finger':
 			res.status(200).send(
 				surveyA
 			);
 			twoFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+
+			/***** POST survey results to Slack *****/
+			// variable placed here to update template literals
+			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			
+			const postSurveyResults = {
+				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
+				body: '&text='+textPortion,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}
+			request(postSurveyResults, function (error, response) {
+				console.log('**** error,response', error,response.body);
+				return;
+			});
+			/****************************************/			
+			
 			break;
 		case 'three_finger':
 			res.status(200).send(
 				surveyA
 			);
 			threeFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+
+			/***** POST survey results to Slack *****/
+			// variable placed here to update template literals
+			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			
+			const postSurveyResults = {
+				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
+				body: '&text='+textPortion,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}
+			request(postSurveyResults, function (error, response) {
+				console.log('**** error,response', error,response.body);
+				return;
+			});
+			/****************************************/			
+			
 			break;
 		case 'four_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fourFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+
+			/***** POST survey results to Slack *****/
+			// variable placed here to update template literals
+			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			
+			const postSurveyResults = {
+				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
+				body: '&text='+textPortion,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}
+			request(postSurveyResults, function (error, response) {
+				console.log('**** error,response', error,response.body);
+				return;
+			});
+			/****************************************/			
+
 			break;
 		case 'five_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fiveFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+
+			/***** POST survey results to Slack *****/
+			// variable placed here to update template literals
+			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			
+			const postSurveyResults = {
+				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
+				body: '&text='+textPortion,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}
+			request(postSurveyResults, function (error, response) {
+				console.log('**** error,response', error,response.body);
+				return;
+			});
+			/****************************************/			
+
 			break;
     default:
 			res.status(200).send(
