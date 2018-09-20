@@ -115,25 +115,19 @@ function postSurvey(){
 	
 
 	const postSurveyResults = {
-		uri: methodUrlPortion+channelPortion+userPortion+textPortionJSON+prettyPortion,
+		url: methodUrlPortion+channelPortion+userPortion+textPortionJSON+prettyPortion,
 		/***** select ONE *****/
 		// body: '&text='+textPortion,
 		// body: '&attachments='+textPortionJSON,
 		/**********************/
 		method: 'POST',
-		headers: [
-			{
+		headers: {
 			/***** select ONE *****/
 			// 'Content-Type': 'application/x-www-form-urlencoded' 
-				name: 'Content-Type',
-				value: 'application/json; charset=utf-8'
+			'Content-Type': 'application/json; charset=utf-8',
 			/**********************/
-			},
-			{
-				name: 'Authorization',
-				value: 'Bearer ' + slackTokenPath.slackTokenBot
-			}
-		]
+			"Authorization": 'Bearer ' + slackTokenPath.slackTokenBot
+		}
 	}
 	request(postSurveyResults, function (error, response) {
 		console.log('**** error,response', error,response.body);
