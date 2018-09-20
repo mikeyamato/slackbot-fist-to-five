@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
 			const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
 
 			request.post({postEphemeralUrl}, function (error, response) {
-				console.log('**** error,response.body', error,response.body);
+				console.log('**** error,response.body', error,response);
 				return;
 			});
 
@@ -119,7 +119,7 @@ const prettyPortion = '&pretty=1';
 const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
 */
 
-// https://slack.com/api/chat.postEphemeral?token=xoxp-320823214209-322427437687-438546674048-eb84f0037854b07fd890a1a89f8077b3&channel=C9FEK4T0D&text=Hello&user=U9GCKCVL7&pretty=1
+
 
 // https://api.slack.com/methods/chat.postEphemeral/test
 
