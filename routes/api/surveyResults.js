@@ -43,6 +43,7 @@ router.post('/', (req, res) => {
 			)
 			fist += 1;
 			postSurvey();
+			console.log('############### response', response)
 			break;
     case 'one_finger':
 			res.status(200).send(
