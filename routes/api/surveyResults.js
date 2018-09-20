@@ -126,7 +126,7 @@ function postSurvey(){
 			// 'Content-Type': 'application/x-www-form-urlencoded' 
 			'Content-Type': 'application/json; charset=utf-8',
 			/**********************/
-			'Authorization': `'Bearer ${slackTokenPortion}'`
+			'Authorization': 'Bearer ' + slackTokenPortion
 		}
 	}
 	request(postSurveyResults, function (error, response) {
