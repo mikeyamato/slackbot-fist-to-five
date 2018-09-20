@@ -107,7 +107,7 @@ function postSurvey(){
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 	const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 	
-	const textPortionJSON = JSON.stringify(`[{"pretext": "Results...", "text": "fist": ${fist} \n"one finger": ${oneFinger} \n"two fingers": ${twoFingers} \n"three fingers": ${threeFingers} \n"four fingers": ${fourFingers} \n"five fingers": ${fiveFingers}}]`);
+	const textPortionJSON = JSON.stringify(`[{"pretext": "Results...", "text": "fist": "${fist}" \n"one finger": "${oneFinger}" \n"two fingers": "${twoFingers}" \n"three fingers": "${threeFingers}" \n"four fingers": "${fourFingers}" \n"five fingers": "${fiveFingers}"}]`);
 	
 	const postSurveyResults = {
 		uri: methodUrlPortion+channelPortion+userPortion+prettyPortion,
