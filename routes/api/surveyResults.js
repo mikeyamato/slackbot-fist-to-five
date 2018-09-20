@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
 			);
 			fist += 1;
 			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
-			console.log('**** window', window);
+			console.log('**** this', this);
 			break;
     case 'one_finger':
 			res.status(200).send(
