@@ -17,6 +17,13 @@ let fourFingers = 0;
 let fiveFingers = 0;
 
 
+const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
+const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
+const channelPortion = '&channel=C9FEK4T0D';
+const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+const userPortion = '&user=U9GCKCVL7'; // recipient
+const prettyPortion = '&pretty=1';
+
 // post request
 // posting survey form on slack
 router.post('/', (req, res) => {
@@ -39,12 +46,12 @@ router.post('/', (req, res) => {
 			)
 			fist += 1;
 
-			const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
-			const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
-			const channelPortion = '&channel=C9FEK4T0D';
-			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
-			const userPortion = '&user=U9GCKCVL7'; // recipient
-			const prettyPortion = '&pretty=1';
+			// const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
+			// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
+			// const channelPortion = '&channel=C9FEK4T0D';
+			// const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			// const userPortion = '&user=U9GCKCVL7'; // recipient
+			// const prettyPortion = '&pretty=1';
 			
 			
 			var clientServerOptions = {

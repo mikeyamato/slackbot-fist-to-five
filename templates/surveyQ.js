@@ -2,7 +2,7 @@ module.exports = {
 	"text": "What time is it? It's Fist-to-Five survey time! Yay! :tada:",
 	"attachments": [
 		{
-			"title": "How well do you understand this material?\n\nResponses are 100% anonymous.\n",
+			"title": "How well do you understand this material?\n\n_Responses are 100% anonymous._\n",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
 			"color": "#FF9DBB",
@@ -39,7 +39,7 @@ module.exports = {
 					],
 					"confirm": {
 						"title": "Are you sure?",
-						"text": "Just wanted to confirm your selection. :nerd_face:",
+						"text": "Just confirming your selection. :nerd_face:",
 						"ok_text": "Yes, I'm sure",
 						"dismiss_text": "No, I'm not sure"
 					}
