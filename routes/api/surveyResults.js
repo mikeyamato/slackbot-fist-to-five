@@ -117,7 +117,7 @@ function postSurvey(){
 		/**********************/
 		method: 'POST',
 		headers: {
-			'Authorization': 'Bearer ' + slackTokenPortion,
+			'Authorization': `'Bearer ${slackTokenPortion}'`,
 			/***** select ONE *****/
 			// 'Content-Type': 'application/x-www-form-urlencoded' 
 			'Content-Type': 'application/json; charset=utf-8'
