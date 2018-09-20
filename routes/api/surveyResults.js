@@ -42,15 +42,32 @@ router.post('/', (req, res) => {
 			const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
 			const slackTokenPortion = '?token=' + slackToken;
 			const channelPortion = '&channel=C9FEK4T0D';
-			const textPortion = `&text=results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
+			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 			const userPortion = '&user=U9GCKCVL7'; // recipient
 			const prettyPortion = '&pretty=1';
-			const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
+			// const postEphemeralUrl = methodUrlPortion + slackTokenPortion + channelPortion + textPortion + userPortion + prettyPortion;
+			
+			
+				var clientServerOptions = {
+					uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion,
+					body: '&text='+textPortion,
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					}
+				}
+				request(clientServerOptions, function (error, response) {
+					console.log('**** error,response', error,response);
+					return;
+				});
+			
 
-			request.post({postEphemeralUrl}, function (error, response) {
-				console.log('**** error,response.body', error,response);
-				return;
-			});
+
+
+			// request.post({postEphemeralUrl}, function (error, response) {
+			// 	console.log('**** error,response', error,response);
+			// 	return;
+			// });
 
 			break;
     case 'one_finger':
