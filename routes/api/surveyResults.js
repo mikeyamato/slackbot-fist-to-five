@@ -16,7 +16,12 @@ let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
 
+const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
+const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
+const channelPortion = '&channel=C9FEK4T0D';
 
+const userPortion = '&user=U9GCKCVL7'; // recipient
+const prettyPortion = '&pretty=1';
 
 
 // post request
@@ -34,12 +39,7 @@ router.post('/', (req, res) => {
 	// console.log('**** 4', survey.actions[0].selected_options[0].value);  // logs the action
 	// console.log('**** 5', survey.user.name);  // logs who made the action
 
-	const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
-	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
-	const channelPortion = '&channel=C9FEK4T0D';
-	const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
-	const userPortion = '&user=U9GCKCVL7'; // recipient
-	const prettyPortion = '&pretty=1';
+
 
 	switch (handGesture) {
 		case 'fist':
@@ -55,6 +55,7 @@ router.post('/', (req, res) => {
 			// const userPortion = '&user=U9GCKCVL7'; // recipient
 			// const prettyPortion = '&pretty=1';
 			
+			const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
 			
 			var clientServerOptions = {
 				uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion,
