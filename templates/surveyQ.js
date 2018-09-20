@@ -2,7 +2,7 @@ module.exports = {
 	"text": "What time is it? It's Fist-to-Five survey time! Yay! :tada:",
 	"attachments": [
 		{
-			"title": "How well are you understaning this material?\n\n100% anonymous",
+			"title": "How well are you understaning this material?\nResponses are 100% anonymous",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
 			"color": "#FF9DBB",
@@ -13,27 +13,27 @@ module.exports = {
 					"type": "select",
 					"options": [
 						{
-							"text": "Fist (Help, I'm lost)",
+							"text": "Fist  (Help, I'm lost)",
               "value": "fist"
 						},
 						{
-							"text": "1 finger (I barely understand)",
+							"text": "1 finger  (I barely understand)",
               "value": "one_finger"
 						},
 						{
-							"text": "2 fingers (I'm starting to understand)",
+							"text": "2 fingers  (I'm starting to understand)",
               "value": "two_finger"
 						},
 						{
-							"text": "3 fingers (I somewhat get it)",
+							"text": "3 fingers  (I somewhat get it)",
               "value": "three_finger"
 						},
 						{
-							"text": "4 fingers (I'm comfortable with the idea)",
+							"text": "4 fingers  (I'm comfortable with the idea)",
               "value": "four_finger"
 						},
 						{
-							"text": "5 fingers (I understand this 100%)",
+							"text": "5 fingers  (I understand this 100%)",
               "value": "five_finger"
 						},
 					],
