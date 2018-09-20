@@ -42,44 +42,42 @@ router.post('/', (req, res) => {
 				surveyA
 			)
 			fist += 1;
-
 			postSurvey();
-
 			break;
     case 'one_finger':
 			res.status(200).send(
 				surveyA
 			);
 			oneFinger += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			postSurvey()
 			break;
 		case 'two_finger':
 			res.status(200).send(
 				surveyA
 			);
 			twoFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			postSurvey()
 			break;
 		case 'three_finger':
 			res.status(200).send(
 				surveyA
 			);
 			threeFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			postSurvey()
 			break;
 		case 'four_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fourFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			postSurvey()
 			break;
 		case 'five_finger':
 			res.status(200).send(
 				surveyA
 			);
 			fiveFingers += 1;
-			console.log('results... fist: ' + fist + ', one finger: ' + oneFinger + ', two fingers: ' + twoFingers + ', three fingers: ' + threeFingers + ', four fingers: ' + fourFingers + ', five fingers: ' + fiveFingers);
+			postSurvey()
 			break;
     default:
 			res.status(200).send(
@@ -100,20 +98,15 @@ router.post('/', (req, res) => {
 	// )}
 })
 
+/***** POST survey results to Slack *****/
 function postSurvey(){
-
-	/***** POST survey results to Slack *****/
 	const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
 	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
 	const channelPortion = '&channel=C9FEK4T0D';
 	const userPortion = '&user=U9GCKCVL7'; // recipient
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
-	/****************************************/
-
-	/***** POST survey results to Slack *****/
-	// variable placed here to update template literals
 	const textPortion = `results... fist: ${fist}, one finger: ${oneFinger}, two fingers: ${twoFingers}, three fingers: ${threeFingers}, four fingers: ${fourFingers}, five fingers: ${fiveFingers}`;
-
+	
 	const postSurveyResults = {
 		uri: methodUrlPortion+slackTokenPortion+channelPortion+userPortion+prettyPortion,
 		body: '&text='+textPortion,
@@ -126,8 +119,8 @@ function postSurvey(){
 		console.log('**** error,response', error,response.body);
 		return;
 	});
-	/****************************************/
 }
+/****************************************/
 
 module.exports = router;
 
