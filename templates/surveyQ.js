@@ -2,7 +2,7 @@ module.exports = {
 	"text": "What time is it? It's Fist-to-Five survey time! Yay! :tada:",
 	"attachments": [
 		{
-			"title": "How well are you understaning this material?\nResponses are 100% anonymous",
+			"title": "How well are you understaning this material?\n\nResponses are 100% anonymous.\n",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
 			"color": "#FF9DBB",
