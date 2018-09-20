@@ -113,9 +113,9 @@ function postSurvey(){
 		body: '&text='+textPortionJSON,
 		method: 'POST',
 		headers: {
-			// select ONE
+			/***** select ONE *****/
 			// 'Content-Type': 'application/x-www-form-urlencoded' 
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json; charset=utf-8'
 		}
 	}
 	request(postSurveyResults, function (error, response) {
