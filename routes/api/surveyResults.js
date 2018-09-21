@@ -169,12 +169,3 @@ function updateClient(postData){
 */
 
 
-
-
-https://slack.com/api/chat.postEphemeral?token=xoxp-320823214209-322427437687-439677512563-a47488f71280b0b31b1e3a65e3fcca52&channel=C9FEK4T0D&text=Hello%20Hello&user=U9GCKCVL7&attachments=%5B%7B%22pretext%22%3A%20%22Results...%22%2C%20%22text%22%3A%20%22fist%3A%200%20%5Cn%20one%20finger%3A%201%20%5Cn%20two%20fingers%3A%202%20%5Cn%20three%20fingers%3A%203%22%7D%5D&pretty=1
-
-https://slack.com/api/chat.postEphemeral&channel=C9FEK4T0D&user=U9GCKCVL7&attachments=%5B%7B%22pretext%22%3A%20%22Results...%22%2C%20%22text%22%3A%20%22fist%3A%200%20one%20finger%3A%200%20%0A%20two%20fingers%3A%200%20%0A%20three%20fingers%3A%200%20%0A%20four%20fingers%3A%200%20%0A%20five%20fingers%3A%201%22%7D%5D&pretty=1
-
-[{"pretext": "Results...", "text": "fist: 0 \n one finger: 1 \n two fingers: 2 \n three fingers: 3 \n four fingers: 4 \n five fingers: 5"}]
-
-https://slack.com/api/chat.postEphemeral?token=xoxb-320823214209-439103392084-L2btc7Klxwgosruoz2ypGLy6&channel=C9FEK4T0D&text=Hello%20Hello&user=U9GCKCVL7&attachments=%5B%7B%22pretext%22%3A%20%22Results...%22%2C%20%22text%22%3A%20%22fist%3A%200%20%5Cn%20one%20finger%3A%201%20%5Cn%20two%20fingers%3A%202%20%5Cn%20three%20fingers%3A%203%20%5Cn%20four%20fingers%3A%204%20%5Cn%20five%20fingers%3A%205%22%7D%5D&pretty=1
