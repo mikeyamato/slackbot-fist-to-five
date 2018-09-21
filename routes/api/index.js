@@ -1,7 +1,8 @@
 const express = require('express');
-var request = require('request');
+const request = require('request');
 const router = express.Router();
 
+const surveyQ = require('../../templates/surveyQ');
 const surveyA = require('../../templates/surveyA');
 const foodEmoji = require('../../assets/foodEmoji');
 
@@ -19,22 +20,54 @@ let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers
 
 // TODO: add GET request to grab member names https://api.slack.com/methods/conversations.members
 
-
+// post request
 // posting survey form on slack
 router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
+	const requestType = req.body.command;
+	const channelId = req.body.channel_id;  // this will be used for the running the survey in the appropraite channel
 	const survey = JSON.parse(req.body.payload);
 	const handGesture = survey.actions[0].selected_options[0].value;
 
-	// console.log('**** -1 req', req);
-	// console.log('**** 0 req.body', req.body);
-	// console.log('**** 1', survey);
-	// console.log('**** 2', survey.actions); 
-	// console.log('**** 3', survey.actions[0].selected_options);
-	// console.log('**** 4', survey.actions[0].selected_options[0].value);  // logs the action
-	// console.log('**** 5', survey.user.name);  // logs who made the action
+	// console.log('**** 1', req)
+	console.log('**** 2', req.body);
+	// console.log('**** 3', requestType);
 
-	
+
+	// reset variables
+	if(requestType === 'clear'){
+
+		fist = 0;
+		oneFinger = 0;
+		twoFingers = 0;
+		threeFingers = 0;
+		fourFingers = 0;
+		fiveFingers = 0;
+		timestamp = [];
+		recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
+
+		res.status(200).send(
+			{
+				"text": "All clear.\n Now run `/fist-to-five` to start the poll. \n :+1::skin-tone-4:",
+			}
+	)}
+
+
+	// hit this with initial slack command
+	if(requestType === '/fist-to-five'){
+		// TODO: find out what channel it's being evoked from and create it as a variable to send it back to that. 
+
+		// send survey out
+		res.status(200).send(
+			surveyQ
+		)} else {
+			res.status(200).send(
+		{
+			"text": `Zoinks! \nSomething doesn't look right. \nPlease try again. \n${singleFoodEmoji}`
+		}
+	)}
+
+	// hit this after selecting answer
 	switch (handGesture) {
 		case 'fist':
 
@@ -183,17 +216,9 @@ function postSurvey(){
 
 module.exports = router;
 
-
-
-
 // https://api.slack.com/custom-integrations/legacy-tokens
 
 // https://api.slack.com/methods/chat.postEphemeral
 // https://api.slack.com/methods/chat.postMessage
 
 // https://stackoverflow.com/questions/32327858/how-to-send-a-post-request-from-node-js-express
-
-
-
-
-
