@@ -24,7 +24,7 @@ let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers
 // posting survey form on slack
 router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
-	const requestType = req.body.command || null;
+	const requestType = req.body || null;
 	const channelId = req.body.channel_id || null;  // this will be used for the running the survey in the appropraite channel
 
 	// console.log('**** 1', req)
@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
 
 
 	// reset variables
-	if(requestType === 'clear'){  // TODO: double check what the 'requestType' is
+	if(requestType.text === 'clear'){  // TODO: double check what the 'requestType' is
 
 		fist = 0;
 		oneFinger = 0;
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 
 
 	// hit this with initial slack command
-	if(requestType === '/fist-to-five'){
+	if(requestType.command === '/fist-to-five'){
 		// TODO: find out what channel it's being evoked from and create it as a variable to send it back to that. 
 
 		// send survey out
