@@ -17,8 +17,9 @@ let fiveFingers = 0;
 let timestamp = [];
 let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
 
+// TODO: add GET request to grab member names https://api.slack.com/methods/conversations.members
 
-// post request
+
 // posting survey form on slack
 router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
@@ -34,7 +35,23 @@ router.post('/', (req, res) => {
 	// console.log('**** 5', survey.user.name);  // logs who made the action
 
 	
+	if(requestType === 'clear'){
 
+		// reset variables
+		fist = 0;
+		oneFinger = 0;
+		twoFingers = 0;
+		threeFingers = 0;
+		fourFingers = 0;
+		fiveFingers = 0;
+		timestamp = [];
+		recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
+
+		res.status(200).send(
+			{
+				"text": "All clear. :+1::skin-tone-4:",
+			}
+	)}
 	
 	
 	
@@ -133,7 +150,7 @@ function postSurvey(){
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
 	const updateMessage = 'https://slack.com/api/chat.update';
 	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
-	const channelPortion = '&channel=C9FEK4T0D';
+	const channelPortion = '&channel=C9FEK4T0D';  // TODO: update id with invoking id
 	const textPortion = '&text=Initial';
 	const textPortionUpdate = '&text=Subsequent';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
