@@ -15,8 +15,7 @@ let twoFingers = 0;
 let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
-
-
+let timestamp = [];
 
 
 // post request
@@ -98,43 +97,59 @@ router.post('/', (req, res) => {
 	// )}
 })
 
+/****************************************/
 /***** POST survey results to Slack *****/
+/****************************************/
 function postSurvey(){
-	const methodUrlPortion	= 'https://slack.com/api/chat.postEphemeral';
+	const postMessage	= 'https://slack.com/api/chat.postMessage';
+	const updateMessage = 'https://slack.com/api/chat.update';
 	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
 	const channelPortion = '&channel=C9FEK4T0D';
-	const userPortion = '&user=U9GCKCVL7'; // recipient
-	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
-	const textPortion = '&text=Hello There Young Man';
+	const textPortion = '&text=Initial';
+	const textPortionUpdate = '&text=Subsequent';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
-	
-	// [{"pretext": "pre-hello", "text": "fist: 1 \n fist: 2"}]
-	// [{"pretext": "Results...", "text": "fist: 0 \n one finger: 1 \n two fingers: 2 \n three fingers: 3"}]
+	const tsPortion = '&ts=' + timestamp[0];
+	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
-	
-
-	const postSurveyResults = {
-		url: methodUrlPortion+slackTokenPortion+channelPortion+ textPortion +userPortion+attachmentsPortion+prettyPortion,
-		/***** select ONE *****/
-		// body: '&text='+textPortion,
-		// body: '&attachments='+textPortionJSON,
-		/**********************/
-		method: 'POST',
-		headers: {
-			/***** select ONE *****/
-			// 'Content-Type': 'application/x-www-form-urlencoded' 
-			'Content-Type': 'application/json; charset=utf-8',
-			/**********************/
+	if(Array.isArray(ts) || ts.length){
+		// update POST
+		const postUpdatedSurveyResults = {
+			url: updateMessage+slackTokenPortion+channelPortion+textPortionUpdate+attachmentsPortion+tsPortion+prettyPortion,
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json; charset=utf-8',
+			}
 		}
+		request(postUpdatedSurveyResults, function (error, response) {
+			// console.log('############### response', response);
+			console.log('############### response.body', response.body);
+			console.log('############### textPortionJSON', postSurveyResults)
+			console.log('############### error', error);
+			
+			return;
+		});
+	} else {
+		// initial POST
+		const postSurveyResults = {
+			url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentsPortion+prettyPortion,
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json; charset=utf-8',
+			}
+		}
+		request(postSurveyResults, function (error, response) {
+			// console.log('############### response', response);
+			console.log('############### response.body', response.body);
+			console.log('############### response.body.ts', response.body.ts);
+			console.log('############### timestamp', timestamp);
+			console.log('############### textPortionJSON', postSurveyResults)
+			console.log('############### error', error);
+
+			timestamp.push(response.body.ts)
+			
+			return;
+		});
 	}
-	request(postSurveyResults, function (error, response) {
-		console.log('############### response', response);
-		console.log('############### response.body', response.body);
-		console.log('############### textPortionJSON', postSurveyResults)
-		console.log('############### error', error);
-		
-		return;
-	});
 }
 /****************************************/
 
@@ -143,29 +158,14 @@ module.exports = router;
 
 
 
+// https://api.slack.com/custom-integrations/legacy-tokens
 
-// https://api.slack.com/methods/chat.postEphemeral/test
+// https://api.slack.com/methods/chat.postEphemeral
+// https://api.slack.com/methods/chat.postMessage
 
 // https://stackoverflow.com/questions/32327858/how-to-send-a-post-request-from-node-js-express
 
 
-/*
-function updateClient(postData){
-	var clientServerOptions = {
-		uri: 'http://'+clientHost+''+clientContext,
-		body: JSON.stringify(postData),
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	}
-	request(clientServerOptions, function (error, response) {
-		console.log(error,response.body);
-		return;
-	});
-}
 
-
-*/
 
 
