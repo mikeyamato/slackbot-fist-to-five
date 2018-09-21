@@ -185,10 +185,10 @@ router.post('/survey', (req, res) => {
 function postSurvey(){
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
 	const updateMessage = 'https://slack.com/api/chat.update';
-	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
+	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  // update with 'bot' token from slack group's app directory
 	const channelPortion = `&channel=${channelId}`;  // TODO: update id with invoking id
-	const textPortion = '&text=Initial';
-	const textPortionUpdate = '&text=*Updated*';
+	const textPortion = '&text=*Fist-to-Five Survey*';
+	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
 	const tsPortion = '&ts=' + timestamp[0];
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
