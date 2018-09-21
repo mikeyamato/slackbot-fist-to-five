@@ -123,7 +123,7 @@ function postSurvey(){
 		request(postUpdatedSurveyResults, function (error, response) {
 			// console.log('############### response', response);
 			console.log('############### response.body', response.body);
-			console.log('############### textPortionJSON', postSurveyResults)
+			console.log('############### textPortionJSON', postUpdatedSurveyResults)
 			console.log('############### error', error);
 			
 			return;
