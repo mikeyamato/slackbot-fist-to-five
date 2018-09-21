@@ -130,10 +130,10 @@ function postSurvey(){
 		}
 	}
 	request(postSurveyResults, function (error, response) {
-		console.log('############### error', error);
 		console.log('############### response', response);
 		// console.log('############### response.body', response.body);
 		console.log('############### textPortionJSON', postSurveyResults)
+		console.log('############### error', error);
 		
 		return;
 	});
