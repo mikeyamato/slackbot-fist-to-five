@@ -28,11 +28,11 @@ router.post('/', (req, res) => {
 
 	// console.log('**** -1 req', req);
 	// console.log('**** 0 req.body', req.body);
-	console.log('**** 1', survey);
+	// console.log('**** 1', survey);
 	// console.log('**** 2', survey.actions); 
 	// console.log('**** 3', survey.actions[0].selected_options);
 	// console.log('**** 4', survey.actions[0].selected_options[0].value);  // logs the action
-	console.log('**** 5', survey.user.name);  // logs who made the action
+	// console.log('**** 5', survey.user.name);  // logs who made the action
 
 	
 
@@ -41,10 +41,14 @@ router.post('/', (req, res) => {
 	
 	switch (handGesture) {
 		case 'fist':
-		// recordSurvey[fist].push(survey.user.name);
-		// console.log('***** recordSurvey', recordSurvey);
-		res.status(200).send(
-			surveyA
+
+			// console.log('***** recordSurvey["fist"]', recordSurvey["fist"]);
+			recordSurvey["fist"].push(survey.user.name);
+			// jsonStr = JSON.stringify(obj)
+			console.log('***** recordSurvey', recordSurvey);
+
+			res.status(200).send(
+				surveyA
 			)
 			fist += 1;
 			postSurvey();
