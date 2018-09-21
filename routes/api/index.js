@@ -17,6 +17,8 @@ let fourFingers = 0;
 let fiveFingers = 0;
 let timestamp = [];
 let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
+const channelId = '';  // this will be used for the running the survey in the appropriate channel
+
 
 // TODO: add GET request to grab member names https://api.slack.com/methods/conversations.members
 
@@ -25,7 +27,8 @@ let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers
 router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
 	const requestType = req.body || null;
-	const channelId = req.body.channel_id || null;  // this will be used for the running the survey in the appropraite channel
+	channelId = requestType.channel_id || null;
+	console.log('**** channelId', channelId);
 
 	// console.log('**** 1', req)
 	console.log('**** 2', req.body);
