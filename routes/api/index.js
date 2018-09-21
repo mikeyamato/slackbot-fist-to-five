@@ -26,8 +26,6 @@ router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
 	const requestType = req.body.command || null;
 	const channelId = req.body.channel_id || null;  // this will be used for the running the survey in the appropraite channel
-	const survey = JSON.parse(req.body.payload) || {};
-	const handGesture = survey.actions[0].selected_options[0].value || null;
 
 	// console.log('**** 1', req)
 	console.log('**** 2', req.body);
@@ -35,7 +33,7 @@ router.post('/', (req, res) => {
 
 
 	// reset variables
-	if(requestType === 'clear'){
+	if(requestType === 'clear'){  // TODO: double check what the 'requestType' is
 
 		fist = 0;
 		oneFinger = 0;
@@ -66,6 +64,15 @@ router.post('/', (req, res) => {
 			"text": `Zoinks! \nSomething doesn't look right. \nPlease try again. \n${singleFoodEmoji}`
 		}
 	)}
+
+})
+
+
+// posting survey form on slack
+router.post('/survey', (req, res) => {
+	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
+	const survey = JSON.parse(req.body.payload);
+	const handGesture = survey.actions[0].selected_options[0].value;
 
 	// hit this after selecting answer
 	switch (handGesture) {
