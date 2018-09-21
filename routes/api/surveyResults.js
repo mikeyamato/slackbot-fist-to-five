@@ -140,11 +140,11 @@ function postSurvey(){
 		request(postSurveyResults, function (error, response) {
 			// console.log('############### response', response);
 			console.log('##############initial# response.body', response.body);
-			console.log('##############initial# response.body.ts', response.body.ts);
+			console.log('##############initial# response.body.ts', response.body[0].ts);
 			console.log('##############initial# textPortionJSON', postSurveyResults)
 			console.log('##############initial# error', error);
 			
-			timestamp.push(response.body.ts)
+			timestamp.push(response.body[0].ts)
 			console.log('##############initial# timestamp', timestamp);
 			
 			return;
