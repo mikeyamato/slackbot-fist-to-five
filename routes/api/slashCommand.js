@@ -12,11 +12,12 @@ router.post('/', (req, res) => {
 	const requestType = req.body.command;
 
 	// console.log('**** 1', req)
-	// console.log('**** 2', req.body);
+	console.log('**** 2', req.body);
 	// console.log('**** 3', requestType);
 
 	if(requestType === '/fist-to-five'){
 		// TODO: reset values on `surveyResults.js` to zero
+		// TODO: find out what channel it's being evoked from and create it as a variable to send it back to that. 
 
 		res.status(200).send(
 			surveyQ
