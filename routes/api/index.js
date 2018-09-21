@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
 				"text": "All clear.\n Now run `/fist-to-five` to start the poll. \n :thumbsup_all:",
 			}
 		)
-		break;
+		return null;
 	}
 
 
