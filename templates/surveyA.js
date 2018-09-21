@@ -1,3 +1,5 @@
+// https://api.slack.com/docs/interactive-message-field-guide
+
 module.exports = {
 	"attachments": [
 		{

@@ -15,9 +15,9 @@ router.post('/', (req, res) => {
 	// console.log('**** 2', req.body);
 	// console.log('**** 3', requestType);
 
-	if(requestType === '/fist'){
+	if(requestType === '/fist-to-five'){
 		// TODO: reset values on `surveyResults.js` to zero
-		
+
 		res.status(200).send(
 			surveyQ
 		)} else {

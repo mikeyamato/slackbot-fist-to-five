@@ -1,3 +1,5 @@
+// https://api.slack.com/docs/interactive-message-field-guide
+
 module.exports = {
 	"text": "What time is it? It's Fist-to-Five survey time! Yay! :tada:",
 	"attachments": [
@@ -50,35 +52,3 @@ module.exports = {
 	"response_type": "in_channel"
 }
 
-/*
-{
-					"name": "fist_one",
-					"text": ":fist-one:",
-					"type": "button",
-					"style": "default"
-				},
-				{
-					"name": "fist_two",
-					"text": ":fist-two:",
-					"type": "button",
-					"style": "default"
-				},
-				{
-					"name": "fist_three",
-					"text": ":fist-three:",
-					"type": "button",
-					"style": "default"
-				},
-				{
-					"name": "fist_four",
-					"text": ":fist-four:",
-					"type": "button",
-					"style": "default"
-				},
-				{
-					"name": "fist_five",
-					"text": ":fist-five:",
-					"type": "button",
-					"style": "default"
-				}
-*/
