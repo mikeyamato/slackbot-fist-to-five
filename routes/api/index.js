@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
 	const requestType = req.body.command || null;
 	const channelId = req.body.channel_id || null;  // this will be used for the running the survey in the appropraite channel
-	const survey = JSON.parse(req.body.payload) || undefined;
+	const survey = JSON.parse(req.body.payload) || '';
 	const handGesture = survey.actions[0].selected_options[0].value || null;
 
 	// console.log('**** 1', req)
