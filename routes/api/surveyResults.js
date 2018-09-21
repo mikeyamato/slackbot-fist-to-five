@@ -16,7 +16,7 @@ let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
 let timestamp = [];
-let recordSurvey = {};
+let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
 
 
 // post request
@@ -34,27 +34,17 @@ router.post('/', (req, res) => {
 	// console.log('**** 4', survey.actions[0].selected_options[0].value);  // logs the action
 	// console.log('**** 5', survey.user.name);  // logs who made the action
 
-	record();
-	function record(){
-		let obj = {};
-		const key = survey.user.name;
-		const value = survey.actions[0].selected_options[0].value;
-		// obj[key] = value;
-		obj = {[key]:value};
-		// recordSurvey = Object.assign(obj);
-		recordSurvey = Object.assign(obj, recordSurvey)
-		
+	
 
-		// recordSurvey.push(obj);
-		// console.log('**** obj', obj);
-		console.log('**** recordSurvey', recordSurvey);
-		// TODO: check if name exists. if yes, overwrite
-	}
-
+	
+	
+	
 	switch (handGesture) {
 		case 'fist':
-			res.status(200).send(
-				surveyA
+		recordSurvey[fist].push(survey.user.name);
+		console.log('***** recordSurvey', recordSurvey);
+		res.status(200).send(
+			surveyA
 			)
 			fist += 1;
 			postSurvey();
@@ -101,16 +91,6 @@ router.post('/', (req, res) => {
 				}
 			)
 	} 
-
-	// if(survey){
-	// 	res.status(200).send(
-	// 		surveyA
-	// 	)} else {
-	// 		res.status(200).send(
-	// 	{
-	// 		"text": `Zoinks! \nSomething doesn't look right. \nPlease try again. \n${singleFoodEmoji}`
-	// 	}
-	// )}
 })
 
 /****************************************/
