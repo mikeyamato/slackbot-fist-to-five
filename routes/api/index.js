@@ -44,24 +44,22 @@ router.post('/', (req, res) => {
 		timestamp = [];
 		recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
 
+		console.log('**** resetting variables ****');
+		console.log('**** fist', fist);
+		console.log('**** oneFinger', oneFinger);
+		console.log('**** twoFingers', twoFingers);
+		console.log('**** threeFingers', threeFingers);
+		console.log('**** fourFingers', fourFingers);
+		console.log('**** fiveFingers', fiveFingers);
+		console.log('**** timestamp', timestamp);
+		console.log('**** recordSurvey', recordSurvey);
+		console.log('*****************************');
+
 		res.status(200).send(
 			{
 				"text": "All clear.\n Now run `/fist-to-five` to start the poll. \n :thumbsup_all:",
 			}
-			.then(() => {
-				console.log('**** resetting variables ****');
-				console.log('**** fist', fist);
-				console.log('**** oneFinger', oneFinger);
-				console.log('**** twoFingers', twoFingers);
-				console.log('**** threeFingers', threeFingers);
-				console.log('**** fourFingers', fourFingers);
-				console.log('**** fiveFingers', fiveFingers);
-				console.log('**** timestamp', timestamp);
-				console.log('**** recordSurvey', recordSurvey);
-				console.log('*****************************');
-			})
 		)
-		
 	}
 
 
