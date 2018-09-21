@@ -48,17 +48,20 @@ router.post('/', (req, res) => {
 			{
 				"text": "All clear.\n Now run `/fist-to-five` to start the poll. \n :thumbsup_all:",
 			}
+			.then(() => {
+				console.log('**** resetting variables ****');
+				console.log('**** fist', fist);
+				console.log('**** oneFinger', oneFinger);
+				console.log('**** twoFingers', twoFingers);
+				console.log('**** threeFingers', threeFingers);
+				console.log('**** fourFingers', fourFingers);
+				console.log('**** fiveFingers', fiveFingers);
+				console.log('**** timestamp', timestamp);
+				console.log('**** recordSurvey', recordSurvey);
+				console.log('*****************************');
+			})
 		)
-		console.log('**** resetting variables ****');
-		console.log('**** fist', fist);
-		console.log('**** oneFinger', oneFinger);
-		console.log('**** twoFingers', twoFingers);
-		console.log('**** threeFingers', threeFingers);
-		console.log('**** fourFingers', fourFingers);
-		console.log('**** fiveFingers', fiveFingers);
-		console.log('**** timestamp', timestamp);
-		console.log('**** recordSurvey', recordSurvey);
-		console.log('*****************************');
+		
 	}
 
 
