@@ -39,8 +39,9 @@ router.post('/', (req, res) => {
 		let obj = {};
 		const key = survey.user.name;
 		const value = survey.actions[0].selected_options[0].value;
-		obj[key] = value
-		recordSurvey.push(obj);
+		// obj[key] = value
+		recordSurvey = {[key]:value}
+		// recordSurvey.push(obj);
 		console.log('**** recordSurvey', recordSurvey);
 		// TODO: check if name exists. if yes, overwrite
 	}
