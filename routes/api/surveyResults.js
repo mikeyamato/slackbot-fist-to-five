@@ -36,12 +36,13 @@ router.post('/', (req, res) => {
 
 	record();
 	function record(){
-		// let obj = {};
+		let obj = {};
 		const key = survey.user.name;
 		const value = survey.actions[0].selected_options[0].value;
-		recordSurvey[key] = value;
-		// obj = {[key]:value};
+		// obj[key] = value;
+		obj = {[key]:value};
 		// recordSurvey = Object.assign(obj);
+		recordSurvey = Object.assign(obj, recordSurvey)
 		
 
 		// recordSurvey.push(obj);
