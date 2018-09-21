@@ -27,16 +27,16 @@ let channelId = '';  // this will be used for the running the survey in the appr
 router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
 	const requestType = req.body || null;
-	channelId = requestType.channel_id || null;
-	console.log('**** channelId', channelId);
-
+	
 	// console.log('**** 1', req)
 	console.log('**** 2', req.body);
 	// console.log('**** 3', requestType);
-
-
+	
+	
 	// reset variables
 	if(requestType.text === 'clear'){  // TODO: double check what the 'requestType' is
+		channelId = requestType.channel_id || null;
+		console.log('**** channelId', channelId);
 
 		fist = 0;
 		oneFinger = 0;
@@ -46,6 +46,7 @@ router.post('/', (req, res) => {
 		fiveFingers = 0;
 		timestamp = [];
 		recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
+		channelId = '';
 
 		console.log('**** resetting variables ****');
 		console.log('**** fist', fist);
@@ -56,6 +57,7 @@ router.post('/', (req, res) => {
 		console.log('**** fiveFingers', fiveFingers);
 		console.log('**** timestamp', timestamp);
 		console.log('**** recordSurvey', recordSurvey);
+		console.log('**** channelId', channelId);
 		console.log('*****************************');
 
 		res.status(200).send(
@@ -187,7 +189,7 @@ function postSurvey(){
 	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
 	const channelPortion = `&channel=${channelId}`;  // TODO: update id with invoking id
 	const textPortion = '&text=Initial';
-	const textPortionUpdate = '&text=Subsequent';
+	const textPortionUpdate = '&text=*Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
 	const tsPortion = '&ts=' + timestamp[0];
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
@@ -204,7 +206,7 @@ function postSurvey(){
 		request(postUpdatedSurveyResults, function (error, response) {
 			// console.log('############### response', response);
 			// console.log('##############update# response.body', response.body);
-			// console.log('##############update# textPortionJSON', postUpdatedSurveyResults);
+			// console.log('##############update# postUpdatedSurveyResults', postUpdatedSurveyResults);
 			console.log('##############update# error', error);
 			
 			return;
@@ -224,7 +226,7 @@ function postSurvey(){
 			// console.log('##############initial# response.body', response.body);
 			// console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
 			// console.log('##############initial# response.body.ts', response.body.messages.ts);
-			// console.log('##############initial# textPortionJSON', postSurveyResults);
+			console.log('##############initial# postSurveyResults', postSurveyResults);
 			console.log('##############initial# error', error);
 			
 			timestamp.push(postSurveyResultsJSON.ts)
