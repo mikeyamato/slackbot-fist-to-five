@@ -46,9 +46,20 @@ router.post('/', (req, res) => {
 
 		res.status(200).send(
 			{
-				"text": "All clear.\n Now run `/fist-to-five` to start the poll. \n :+1::skin-tone-4:",
+				"text": "All clear.\n Now run `/fist-to-five` to start the poll. \n :thumbsup_all:",
 			}
-	)}
+		)
+		console.log('**** resetting variables ****');
+		console.log('**** fist', fist);
+		console.log('**** oneFinger', oneFinger);
+		console.log('**** twoFingers', twoFingers);
+		console.log('**** threeFingers', threeFingers);
+		console.log('**** fourFingers', fourFingers);
+		console.log('**** fiveFingers', fiveFingers);
+		console.log('**** timestamp', timestamp);
+		console.log('**** recordSurvey', recordSurvey);
+		console.log('*****************************');
+	}
 
 
 	// hit this with initial slack command
@@ -64,7 +75,6 @@ router.post('/', (req, res) => {
 			"text": `Zoinks! \nSomething doesn't look right. \nPlease try again. \n${singleFoodEmoji}`
 		}
 	)}
-
 })
 
 
