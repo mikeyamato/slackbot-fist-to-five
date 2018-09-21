@@ -16,6 +16,7 @@ let threeFingers = 0;
 let fourFingers = 0;
 let fiveFingers = 0;
 let timestamp = [];
+let recordSurvey = {};
 
 
 // post request
@@ -33,7 +34,14 @@ router.post('/', (req, res) => {
 	// console.log('**** 4', survey.actions[0].selected_options[0].value);  // logs the action
 	// console.log('**** 5', survey.user.name);  // logs who made the action
 
-
+	record();
+	function record(){
+		const key = survey.user.name;
+		const value = survey.actions[0].selected_options[0].value;
+		recordSurvey.key = value;
+		console.log('**** recordSurvey', recordSurvey);
+		// TODO: check if name exists. if yes, overwrite
+	}
 
 	switch (handGesture) {
 		case 'fist':
@@ -112,7 +120,7 @@ function postSurvey(){
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
 	if(timestamp.length){
-		// update POST
+		/***** update POST *****/
 		const postUpdatedSurveyResults = {
 			url: updateMessage+slackTokenPortion+channelPortion+textPortionUpdate+attachmentsPortion+tsPortion+prettyPortion,
 			method: 'POST',
@@ -122,14 +130,14 @@ function postSurvey(){
 		}
 		request(postUpdatedSurveyResults, function (error, response) {
 			// console.log('############### response', response);
-			console.log('##############update# response.body', response.body);
-			console.log('##############update# textPortionJSON', postUpdatedSurveyResults);
+			// console.log('##############update# response.body', response.body);
+			// console.log('##############update# textPortionJSON', postUpdatedSurveyResults);
 			console.log('##############update# error', error);
 			
 			return;
 		});
 	} else {
-		// initial POST
+		/***** initial POST *****/
 		const postSurveyResults = {
 			url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentsPortion+prettyPortion,
 			method: 'POST',
@@ -140,14 +148,14 @@ function postSurvey(){
 		request(postSurveyResults, function (error, response) {
 			const postSurveyResultsJSON = JSON.parse(response.body);
 			// console.log('############### response', response);
-			console.log('##############initial# response.body', response.body);
-			console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
+			// console.log('##############initial# response.body', response.body);
+			// console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
 			// console.log('##############initial# response.body.ts', response.body.messages.ts);
-			console.log('##############initial# textPortionJSON', postSurveyResults);
+			// console.log('##############initial# textPortionJSON', postSurveyResults);
 			console.log('##############initial# error', error);
 			
 			timestamp.push(postSurveyResultsJSON.ts)
-			console.log('##############initial# timestamp', timestamp);
+			// console.log('##############initial# timestamp', timestamp);
 			
 			return;
 		});
