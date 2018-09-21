@@ -44,6 +44,7 @@ router.post('/', (req, res) => {
 		recordSurvey = Object.assign(obj);
 
 		// recordSurvey.push(obj);
+		console.log('**** obj', obj);
 		console.log('**** recordSurvey', recordSurvey);
 		// TODO: check if name exists. if yes, overwrite
 	}
