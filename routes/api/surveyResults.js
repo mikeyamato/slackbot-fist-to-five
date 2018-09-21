@@ -8,7 +8,6 @@ const foodEmoji = require('../../assets/foodEmoji');
 const slackTokenPath = require('../../config/keys_prod');
 
 // TODO: need to zero out results when `slashCommand.js` gets called
-// TODO: push to object?
 let fist = 0;
 let oneFinger = 0;
 let twoFingers = 0;
@@ -42,10 +41,10 @@ router.post('/', (req, res) => {
 	switch (handGesture) {
 		case 'fist':
 
-			// console.log('***** recordSurvey["fist"]', recordSurvey["fist"]);
+			/***** uncomment if you do want to know who *****/
 			recordSurvey["fist"].push(survey.user.name);
-			// jsonStr = JSON.stringify(obj)
-			console.log('***** recordSurvey', recordSurvey);
+			// console.log('*** recordSurvey ***', recordSurvey);
+			/************************************************/
 
 			res.status(200).send(
 				surveyA
@@ -53,7 +52,13 @@ router.post('/', (req, res) => {
 			fist += 1;
 			postSurvey();
 			break;
-    case 'one_finger':
+		case 'one_finger':
+		
+			/***** uncomment if you do want to know who *****/
+			recordSurvey["one_finger"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
+			/************************************************/
+
 			res.status(200).send(
 				surveyA
 			);
@@ -61,6 +66,12 @@ router.post('/', (req, res) => {
 			postSurvey()
 			break;
 		case 'two_fingers':
+			
+			/***** uncomment if you do want to know who *****/
+			recordSurvey["two_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
+			/************************************************/
+
 			res.status(200).send(
 				surveyA
 			);
@@ -68,6 +79,12 @@ router.post('/', (req, res) => {
 			postSurvey()
 			break;
 		case 'three_fingers':
+			
+			/***** uncomment if you do want to know who *****/
+			recordSurvey["three_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
+			/************************************************/
+
 			res.status(200).send(
 				surveyA
 			);
@@ -75,6 +92,12 @@ router.post('/', (req, res) => {
 			postSurvey()
 			break;
 		case 'four_fingers':
+			
+			/***** uncomment if you do want to know who *****/
+			recordSurvey["four_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
+			/************************************************/
+
 			res.status(200).send(
 				surveyA
 			);
@@ -82,6 +105,12 @@ router.post('/', (req, res) => {
 			postSurvey()
 			break;
 		case 'five_fingers':
+
+			/***** uncomment if you do want to know who *****/
+			recordSurvey["five_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
+			/************************************************/
+
 			res.status(200).send(
 				surveyA
 			);
