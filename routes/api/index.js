@@ -185,7 +185,7 @@ function postSurvey(){
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
 	const updateMessage = 'https://slack.com/api/chat.update';
 	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBot;  // update with 'bot' token from slack group's app directory
-	const channelPortion = '&channel=C9FEK4T0D';  // TODO: update id with invoking id
+	const channelPortion = `&channel=${channelId}`;  // TODO: update id with invoking id
 	const textPortion = '&text=Initial';
 	const textPortionUpdate = '&text=Subsequent';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
