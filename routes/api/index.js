@@ -24,10 +24,10 @@ let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers
 // posting survey form on slack
 router.post('/', (req, res) => {
 	const singleFoodEmoji = foodEmoji[Math.floor(Math.random() * foodEmoji.length)];
-	const requestType = req.body.command;
-	const channelId = req.body.channel_id;  // this will be used for the running the survey in the appropraite channel
-	const survey = JSON.parse(req.body.payload);
-	const handGesture = survey.actions[0].selected_options[0].value;
+	const requestType = req.body.command || null;
+	const channelId = req.body.channel_id || null;  // this will be used for the running the survey in the appropraite channel
+	const survey = JSON.parse(req.body.payload) || null;
+	const handGesture = survey.actions[0].selected_options[0].value || null;
 
 	// console.log('**** 1', req)
 	console.log('**** 2', req.body);
