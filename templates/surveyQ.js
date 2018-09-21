@@ -22,19 +22,19 @@ module.exports = {
 						},
 						{
 							"text": "2 fingers  (I'm starting to understand)",
-              "value": "two_finger"
+              "value": "two_fingers"
 						},
 						{
 							"text": "3 fingers  (I somewhat get it)",
-              "value": "three_finger"
+              "value": "three_fingers"
 						},
 						{
 							"text": "4 fingers  (I'm comfortable with the idea)",
-              "value": "four_finger"
+              "value": "four_fingers"
 						},
 						{
 							"text": "5 fingers  (I understand this 100%)",
-              "value": "five_finger"
+              "value": "five_fingers"
 						},
 					],
 					"confirm": {

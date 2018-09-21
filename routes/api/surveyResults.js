@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
 	function record(){
 		const key = survey.user.name;
 		const value = survey.actions[0].selected_options[0].value;
-		recordSurvey.key = value;
+		recordSurvey[key] = value;
 		console.log('**** recordSurvey', recordSurvey);
 		// TODO: check if name exists. if yes, overwrite
 	}
@@ -58,28 +58,28 @@ router.post('/', (req, res) => {
 			oneFinger += 1;
 			postSurvey()
 			break;
-		case 'two_finger':
+		case 'two_fingers':
 			res.status(200).send(
 				surveyA
 			);
 			twoFingers += 1;
 			postSurvey()
 			break;
-		case 'three_finger':
+		case 'three_fingers':
 			res.status(200).send(
 				surveyA
 			);
 			threeFingers += 1;
 			postSurvey()
 			break;
-		case 'four_finger':
+		case 'four_fingers':
 			res.status(200).send(
 				surveyA
 			);
 			fourFingers += 1;
 			postSurvey()
 			break;
-		case 'five_finger':
+		case 'five_fingers':
 			res.status(200).send(
 				surveyA
 			);
