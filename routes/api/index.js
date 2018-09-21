@@ -17,7 +17,7 @@ let fourFingers = 0;
 let fiveFingers = 0;
 let timestamp = [];
 let recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
-let channelId = '';  // this will be used for the running the survey in the appropriate channel
+var channelId = '';  // this will be used for the running the survey in the appropriate channel
 
 
 // TODO: add GET request to grab member names https://api.slack.com/methods/conversations.members
