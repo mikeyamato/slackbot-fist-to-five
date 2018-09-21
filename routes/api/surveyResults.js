@@ -122,9 +122,9 @@ function postSurvey(){
 		}
 		request(postUpdatedSurveyResults, function (error, response) {
 			// console.log('############### response', response);
-			console.log('############### response.body', response.body);
-			console.log('############### textPortionJSON', postUpdatedSurveyResults)
-			console.log('############### error', error);
+			console.log('##############update# response.body', response.body);
+			console.log('##############update# textPortionJSON', postUpdatedSurveyResults)
+			console.log('##############update# error', error);
 			
 			return;
 		});
@@ -139,13 +139,13 @@ function postSurvey(){
 		}
 		request(postSurveyResults, function (error, response) {
 			// console.log('############### response', response);
-			console.log('############### response.body', response.body);
-			console.log('############### response.body.ts', response.body.ts);
-			console.log('############### timestamp', timestamp);
-			console.log('############### textPortionJSON', postSurveyResults)
-			console.log('############### error', error);
-
+			console.log('##############initial# response.body', response.body);
+			console.log('##############initial# response.body.ts', response.body.ts);
+			console.log('##############initial# textPortionJSON', postSurveyResults)
+			console.log('##############initial# error', error);
+			
 			timestamp.push(response.body.ts)
+			console.log('##############initial# timestamp', timestamp);
 			
 			return;
 		});
