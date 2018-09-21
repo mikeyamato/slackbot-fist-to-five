@@ -111,7 +111,7 @@ function postSurvey(){
 	const tsPortion = '&ts=' + timestamp[0];
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
-	if(Array.isArray(ts) || ts.length){
+	if(Array.isArray(timestamp) || timestamp.length){
 		// update POST
 		const postUpdatedSurveyResults = {
 			url: updateMessage+slackTokenPortion+channelPortion+textPortionUpdate+attachmentsPortion+tsPortion+prettyPortion,
