@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 	const requestType = req.body || null;
 	
 	// console.log('**** 1', req)
-	console.log('**** 2', req.body);
+	// console.log('**** 2', req.body);
 	// console.log('**** 3', requestType);
 	
 	
@@ -47,17 +47,17 @@ router.post('/', (req, res) => {
 		timestamp = [];
 		recordSurvey = {"fist": [],"one_finger": [],"two_fingers": [],"three_fingers": [],"four_fingers": [],"five_fingers": []};
 
-		console.log('**** resetting variables ****');
-		console.log('**** fist', fist);
-		console.log('**** oneFinger', oneFinger);
-		console.log('**** twoFingers', twoFingers);
-		console.log('**** threeFingers', threeFingers);
-		console.log('**** fourFingers', fourFingers);
-		console.log('**** fiveFingers', fiveFingers);
-		console.log('**** timestamp', timestamp);
-		console.log('**** recordSurvey', recordSurvey);
-		console.log('**** channelId', channelId);
-		console.log('*****************************');
+		// console.log('**** resetting variables ****');
+		// console.log('**** fist', fist);
+		// console.log('**** oneFinger', oneFinger);
+		// console.log('**** twoFingers', twoFingers);
+		// console.log('**** threeFingers', threeFingers);
+		// console.log('**** fourFingers', fourFingers);
+		// console.log('**** fiveFingers', fiveFingers);
+		// console.log('**** timestamp', timestamp);
+		// console.log('**** recordSurvey', recordSurvey);
+		// console.log('**** channelId', channelId);
+		// console.log('*****************************');
 
 		res.status(200).send(
 			{
@@ -96,7 +96,7 @@ router.post('/survey', (req, res) => {
 
 			/***** uncomment if you do want to know who *****/
 			recordSurvey["fist"].push(survey.user.name);
-			// console.log('*** recordSurvey ***', recordSurvey);
+			console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -109,7 +109,7 @@ router.post('/survey', (req, res) => {
 		
 			/***** uncomment if you do want to know who *****/
 			recordSurvey["one_finger"].push(survey.user.name);
-			// console.log('*** recordSurvey ***', recordSurvey);
+			console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -122,7 +122,7 @@ router.post('/survey', (req, res) => {
 			
 			/***** uncomment if you do want to know who *****/
 			recordSurvey["two_fingers"].push(survey.user.name);
-			// console.log('*** recordSurvey ***', recordSurvey);
+			console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -135,7 +135,7 @@ router.post('/survey', (req, res) => {
 			
 			/***** uncomment if you do want to know who *****/
 			recordSurvey["three_fingers"].push(survey.user.name);
-			// console.log('*** recordSurvey ***', recordSurvey);
+			console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -148,7 +148,7 @@ router.post('/survey', (req, res) => {
 			
 			/***** uncomment if you do want to know who *****/
 			recordSurvey["four_fingers"].push(survey.user.name);
-			// console.log('*** recordSurvey ***', recordSurvey);
+			console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -161,7 +161,7 @@ router.post('/survey', (req, res) => {
 
 			/***** uncomment if you do want to know who *****/
 			recordSurvey["five_fingers"].push(survey.user.name);
-			// console.log('*** recordSurvey ***', recordSurvey);
+			console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -185,7 +185,7 @@ router.post('/survey', (req, res) => {
 function postSurvey(){
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
 	const updateMessage = 'https://slack.com/api/chat.update';
-	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  // update with 'bot' token from slack group's app directory
+	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  // update with 'bot' token from slack group's app directory
 	const channelPortion = `&channel=${channelId}`;  // TODO: update id with invoking id
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
