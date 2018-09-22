@@ -183,7 +183,12 @@ router.post('/survey', (req, res) => {
 function postSurvey(){
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
 	const updateMessage = 'https://slack.com/api/chat.update';
-	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  // update with 'bot' token from slack group's app directory
+
+	/***** choose one or update with different token *****/
+		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
+		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
+	/*****************************************************/
+	
 	const channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
