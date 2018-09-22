@@ -185,8 +185,8 @@ function postSurvey(){
 	const updateMessage = 'https://slack.com/api/chat.update';
 
 	/***** choose one or update with different token *****/
-		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
-		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenPersonTonkotsu;  
+		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
+		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenPersonTonkotsu;  
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
@@ -209,7 +209,7 @@ function postSurvey(){
 		request(postUpdatedSurveyResults, function (error, response) {
 			// console.log('############### response', response);
 			// console.log('##############update# response.body', response.body);
-			// console.log('##############update# postUpdatedSurveyResults', postUpdatedSurveyResults);
+			console.log('##############update# postUpdatedSurveyResults', postUpdatedSurveyResults);
 			console.log('##############update# error', error);
 			
 			return;
@@ -229,7 +229,7 @@ function postSurvey(){
 			// console.log('##############initial# response.body', response.body);
 			// console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
 			// console.log('##############initial# response.body.ts', response.body.messages.ts);
-			// console.log('##############initial# postSurveyResults', postSurveyResults);
+			console.log('##############initial# postSurveyResults', postSurveyResults);
 			console.log('##############initial# error', error);
 			
 			timestamp.push(postSurveyResultsJSON.ts)
