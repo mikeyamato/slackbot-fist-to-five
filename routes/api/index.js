@@ -8,7 +8,6 @@ const foodEmoji = require('../../assets/foodEmoji');
 
 const slackTokenPath = require('../../config/keys_prod');
 
-// TODO: need to zero out results when `slashCommand.js` gets called
 let fist = 0;
 let oneFinger = 0;
 let twoFingers = 0;
@@ -34,7 +33,7 @@ router.post('/', (req, res) => {
 	
 	
 	// reset variables
-	if(requestType.text === 'clear'){  // TODO: double check what the 'requestType' is
+	if(requestType.text === 'clear'){  
 		channelId = requestType.channel_id;
 		console.log('**** channelId', channelId);
 
@@ -69,8 +68,7 @@ router.post('/', (req, res) => {
 
 
 	// hit this with initial slack command
-	if(requestType.command === '/fist-to-five'){
-		// TODO: find out what channel it's being evoked from and create it as a variable to send it back to that. 
+	if(requestType.command === '/fist-to-five' && requestType.text === ''){
 
 		// send survey out
 		res.status(200).send(
@@ -186,7 +184,7 @@ function postSurvey(){
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
 	const updateMessage = 'https://slack.com/api/chat.update';
 	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  // update with 'bot' token from slack group's app directory
-	const channelPortion = `&channel=${channelId}`;  // TODO: update id with invoking id
+	const channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
@@ -225,7 +223,7 @@ function postSurvey(){
 			// console.log('##############initial# response.body', response.body);
 			// console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
 			// console.log('##############initial# response.body.ts', response.body.messages.ts);
-			console.log('##############initial# postSurveyResults', postSurveyResults);
+			// console.log('##############initial# postSurveyResults', postSurveyResults);
 			console.log('##############initial# error', error);
 			
 			timestamp.push(postSurveyResultsJSON.ts)
