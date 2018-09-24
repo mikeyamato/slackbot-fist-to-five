@@ -59,7 +59,7 @@ function postSurvey(){
 
 	/***** choose one or update with different token *****/
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
-		const slackTokenPortion = '?token=' + payload.token;  
+		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenWorkspaceTonkotsu;  
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
@@ -87,6 +87,7 @@ function postSurvey(){
 		// console.log('##############initial# response.body.ts', response.body.messages.ts);
 		console.log('##############initial# postSurveyResults', postSurveyResults);
 		console.log('##############initial# error', error);
+		console.log('##############initial# req.body.error', req.body.error)
 		
 		// timestamp.push(postSurveyResultsJSON.ts)
 		// console.log('##############initial# timestamp', timestamp);
