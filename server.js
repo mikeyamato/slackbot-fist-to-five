@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 // const slashCommand = require('./routes/api/slashCommand');
 // const surveyResults = require('./routes/api/surveyResults');
 const index = require('./routes/api');
+const oauth = require('./routes/api/oauth');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 // app.use('/api/slash', slashCommand);
 // app.use('/api/survey', surveyResults);
 app.use('/api/index', index);
+app.use('/api/oauth', oauth);
 
 const port = process.env.PORT || 4000;
 
