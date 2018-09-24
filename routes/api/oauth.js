@@ -1,5 +1,6 @@
 const express = require('express');
 const request = require('request');
+const { WebClient } = require('@slack/client');
 const router = express.Router();
 
 const slackTokenPath = require('../../config/keys_prod');
