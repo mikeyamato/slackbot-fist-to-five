@@ -67,7 +67,7 @@ function postSurvey(){
 	/*****************************************************/
 	
 	let channelPortion = '&channel='+payload.event.channel;  
-	const textPortion = '&text=*Fist-to-Five Survey*';
+	const textPortion = '&text='+encodeURIComponent(response_text);;
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(response_text);
 	// const tsPortion = '&ts=' + timestamp[0];
@@ -76,7 +76,7 @@ function postSurvey(){
 	
 	/***** initial POST *****/
 	const postSurveyResults = {
-		url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentsPortion+prettyPortion,
+		url: postMessage+slackTokenPortion+channelPortion+textPortion+prettyPortion,
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json; charset=utf-8',
