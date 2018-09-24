@@ -19,8 +19,9 @@ router.post('/', (req, res, next) => {
 	// )
 
 
-	let payload = JSON.parse(req.body.payload);
+	let payload = JSON.parse(req.body);
 	console.log('#### payload', payload);
+	console.log('#### req.body.payload', payload.payload);
 	let channelId = payload.event.channel;
 	
 	res.sendStatus(200);
