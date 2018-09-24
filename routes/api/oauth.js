@@ -18,10 +18,13 @@ router.post('/', (req, res, next) => {
 	// 	}
 	// )
 
+	console.log('req', req);
+	console.log('req.body', req.body);
 
-	let payload = JSON.parse(req.body);
-	console.log('#### payload', payload);
-	console.log('#### req.body.payload', payload.payload);
+	
+	// let payload = JSON.parse(req.body);
+	// console.log('#### payload', payload);
+	// console.log('#### req.body.payload', payload.payload);
 	let channelId = payload.event.channel;
 	
 	res.sendStatus(200);
@@ -40,7 +43,7 @@ router.post('/', (req, res, next) => {
 			}
 			if (response_text !== undefined) {
 					// Make call to chat.postMessage sending response_text using bot's token
-					postSurvey()
+					// postSurvey()
 			}
 	}
 } )
