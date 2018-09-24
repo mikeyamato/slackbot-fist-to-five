@@ -21,6 +21,8 @@ router.post('/', (req, res, next) => {
 
 
 	let payload = req.body;
+	let channelId = payload.event.channel;
+
 	res.sendStatus(200);
 	console.log('#### payload', payload);
 
