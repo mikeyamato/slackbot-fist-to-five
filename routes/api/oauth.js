@@ -5,7 +5,6 @@ const router = express.Router();
 
 
 router.post('/', (req, res, next) => {
-	console.log('&&&& req', req);
 	/**
 	|--------------------------------------------------
 	| initially run this only in order to verify "event subscriptions" for a workspace app
@@ -56,7 +55,7 @@ function postSurvey(){
 
 	/***** choose one or update with different token *****/
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
-		const slackTokenPortion = `?token=${payload.token}`;  
+		const slackTokenPortion = '?token=' + payload.token;  
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
