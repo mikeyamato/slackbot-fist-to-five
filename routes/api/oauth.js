@@ -4,8 +4,8 @@ const router = express.Router();
 
 
 
-router.post('/', function(req, res, next) {
-
+router.post('/', (req, res, next) => {
+	console.log('&&&& req', req);
 	/**
 	|--------------------------------------------------
 	| initially run this only in order to verify "event subscriptions" for a workspace app
