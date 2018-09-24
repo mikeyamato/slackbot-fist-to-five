@@ -62,7 +62,7 @@ function postSurvey(){
 
 	/***** choose one or update with different token *****/
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
-		const slackTokenPortion = '?token=' + payload.token;  
+		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenWorkspaceTonkotsu;  
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
