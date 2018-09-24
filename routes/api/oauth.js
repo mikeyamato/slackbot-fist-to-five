@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 
-router.post('/', (req, res, next) => {
+router.post('/', function(req, res, next) {
 
 	/**
 	|--------------------------------------------------
@@ -21,8 +21,8 @@ router.post('/', (req, res, next) => {
 
 
 	let payload = req.body;
-	let channelId = payload.event.channel;
 	console.log('#### payload', payload);
+	let channelId = payload.event.channel;
 	
 	res.sendStatus(200);
 
