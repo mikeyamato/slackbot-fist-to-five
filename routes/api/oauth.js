@@ -66,7 +66,7 @@ function postSurvey(){
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(response_text);
-	const tsPortion = '&ts=' + timestamp[0];
+	// const tsPortion = '&ts=' + timestamp[0];
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
 	
@@ -79,12 +79,12 @@ function postSurvey(){
 		}
 	}
 	request(postSurveyResults, function (error, response) {
-		const postSurveyResultsJSON = JSON.parse(response.body);
+		// const postSurveyResultsJSON = JSON.parse(response.body);
 		// console.log('############### response', response);
 		// console.log('##############initial# response.body', response.body);
 		// console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
 		// console.log('##############initial# response.body.ts', response.body.messages.ts);
-		console.log('##############initial# postSurveyResults', postSurveyResults);
+		// console.log('##############initial# postSurveyResults', postSurveyResults);
 		console.log('##############initial# error', error);
 		
 		// timestamp.push(postSurveyResultsJSON.ts)
