@@ -80,12 +80,12 @@ function postSurvey(){
 		}
 	}
 	request(postSurveyResults, function (error, response) {
-		const postSurveyResultsJSON = JSON.parse(response.body);
+		// const postSurveyResultsJSON = JSON.parse(response.body);
 		// console.log('############### response', response);
 		// console.log('##############initial# response.body', response.body);
 		// console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
 		// console.log('##############initial# response.body.ts', response.body.messages.ts);
-		// console.log('##############initial# postSurveyResults', postSurveyResults);
+		console.log('##############initial# postSurveyResults', postSurveyResults);
 		console.log('##############initial# error', error);
 		
 		// timestamp.push(postSurveyResultsJSON.ts)
