@@ -19,23 +19,23 @@ module.exports = {
               "value": "fist"
 						},
 						{
-							"text": "1 finger  (I barely understand)",
+							"text": "1  (I barely understand)",
               "value": "one_finger"
 						},
 						{
-							"text": "2 fingers  (I'm starting to understand)",
+							"text": "2  (I'm starting to understand)",
               "value": "two_fingers"
 						},
 						{
-							"text": "3 fingers  (I somewhat get it)",
+							"text": "3  (I somewhat get it)",
               "value": "three_fingers"
 						},
 						{
-							"text": "4 fingers  (I'm comfortable with the idea)",
+							"text": "4  (I'm comfortable with the idea)",
               "value": "four_fingers"
 						},
 						{
-							"text": "5 fingers  (I understand this 100%)",
+							"text": "5  (I understand this 100%)",
               "value": "five_fingers"
 						},
 					],
