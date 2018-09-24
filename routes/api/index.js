@@ -185,9 +185,9 @@ function postSurvey(){
 	const updateMessage = 'https://slack.com/api/chat.update';
 
 	/***** choose one or update with different token *****/
-		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
+		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;  
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenPersonTonkotsu;  
-		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
+		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
 	const channelPortion = `&channel=${channelId}`;  
