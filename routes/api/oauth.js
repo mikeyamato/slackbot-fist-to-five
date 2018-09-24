@@ -8,9 +8,9 @@ router.post('/', (req, res, next) => {
 
 	console.log('res.body', res.body)
 	res.status(200).send(
-		{
-			"text": res.body.challenge 
-		}
+		// {
+		// 	"text": res.body.challenge 
+		// }
 	)
 })
 
