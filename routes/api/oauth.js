@@ -90,7 +90,6 @@ function postSurvey(){
 		// console.log('##############initial# response.body.ts', response.body.messages.ts);
 		console.log('##############initial# postSurveyResults', postSurveyResults);
 		console.log('##############initial# error', error);
-		console.log('##############initial# req.body.error', req)
 		
 		// timestamp.push(postSurveyResultsJSON.ts)
 		// console.log('##############initial# timestamp', timestamp);
