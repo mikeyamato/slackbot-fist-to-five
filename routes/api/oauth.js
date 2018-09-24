@@ -10,7 +10,7 @@ router.post('/', (req, res, next) => {
 			"text": res.body.token
 		}
 	)
-}
+})
 
 /*
 router.post('/', (req, res, next) => {
