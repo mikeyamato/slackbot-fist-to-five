@@ -3,6 +3,7 @@ const request = require('request');
 const router = express.Router();
 
 let payload = '';
+let response_text = '';
 
 router.post('/', (req, res, next) => {
 	/**
@@ -29,7 +30,6 @@ router.post('/', (req, res, next) => {
 	res.sendStatus(200);
 
 	if (payload.event.type === "message") {
-			let response_text;
 			if (payload.event.text.includes("<@UCYHGRB3M>") && payload.event.text.includes("tell me a joke")) {
 					response_text = `Hello <@${payload.event.user}>! Knock, knock.`
 					console.log('#### response_text', response_text);
