@@ -10,6 +10,7 @@ router.post('/', (req, res, next) => {
 			let response_text;
 			if (payload.event.text.includes("<@UCYHGRB3M>") && payload.event.text.includes("tell me a joke")) {
 					response_text = `Hello <@${payload.event.username}>! Knock, knock.`
+					console.log('#### response_text', response_text);
 			}
 			if (payload.event.text.includes("Who's there?")) {
 					response_text = "A bot user";
