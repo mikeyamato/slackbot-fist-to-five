@@ -63,7 +63,7 @@ function postSurvey(){
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
-	let channelPortion = '&channel='+payload.channel;  
+	let channelPortion = '&channel='+payload.event.channel;  
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(response_text);
