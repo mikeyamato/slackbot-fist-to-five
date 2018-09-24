@@ -61,14 +61,14 @@ function postSurvey(){
 	const channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
-	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one finger: ${oneFinger} \n two fingers: ${twoFingers} \n three fingers: ${threeFingers} \n four fingers: ${fourFingers} \n five fingers: ${fiveFingers}"}]`);
+	const attachmentsPortion = '&attachments='+encodeURIComponent(response_text);
 	const tsPortion = '&ts=' + timestamp[0];
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
 	
 	/***** initial POST *****/
 	const postSurveyResults = {
-		url: postMessage+slackTokenPortion+channelPortion+textPortion+response_text+prettyPortion,
+		url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentsPortion+prettyPortion,
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json; charset=utf-8',
@@ -83,7 +83,7 @@ function postSurvey(){
 		console.log('##############initial# postSurveyResults', postSurveyResults);
 		console.log('##############initial# error', error);
 		
-		timestamp.push(postSurveyResultsJSON.ts)
+		// timestamp.push(postSurveyResultsJSON.ts)
 		// console.log('##############initial# timestamp', timestamp);
 		
 		return;
