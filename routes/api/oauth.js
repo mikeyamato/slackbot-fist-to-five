@@ -2,7 +2,7 @@ const express = require('express');
 const request = require('request');
 const router = express.Router();
 
-
+let payload = '';
 
 router.post('/', (req, res, next) => {
 	/**
@@ -21,7 +21,7 @@ router.post('/', (req, res, next) => {
 
 
 	
-	let payload = req.body;
+	payload = req.body;
 	// console.log('#### payload', payload);
 	console.log('#### payload.token', payload.token);
 	let channelId = payload.channel;
