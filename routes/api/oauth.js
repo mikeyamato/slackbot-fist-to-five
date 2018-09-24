@@ -2,8 +2,7 @@ const express = require('express');
 const request = require('request');
 const router = express.Router();
 
-const payload = '';
-const channelId = payload.channel;
+let payload = '';
 
 router.post('/', (req, res, next) => {
 	/**
@@ -63,7 +62,7 @@ function postSurvey(){
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
-	let channelPortion = `&channel=${channelId}`;  
+	let channelPortion = '&channel='+payload.channel;  
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(response_text);
