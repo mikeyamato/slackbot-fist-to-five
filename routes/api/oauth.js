@@ -6,11 +6,11 @@ const router = express.Router();
 
 router.post('/', (req, res, next) => {
 
-	console.log('res.body', res.body)
+	console.log('**** req.body', req.body)
 	res.status(200).send(
-		// {
-		// 	"text": res.body.challenge 
-		// }
+		{
+			"text": req.body.challenge 
+		}
 	)
 })
 
