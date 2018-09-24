@@ -23,7 +23,7 @@ router.post('/', (req, res, next) => {
 
 	
 	payload = req.body;
-	// console.log('#### payload', payload);
+	console.log('#### payload', payload);
 	console.log('#### payload.token', payload.token);
 	
 	
@@ -79,7 +79,7 @@ function postSurvey(){
 		}
 	}
 	request(postSurveyResults, function (error, response) {
-		// const postSurveyResultsJSON = JSON.parse(response.body);
+		const postSurveyResultsJSON = JSON.parse(response.body);
 		// console.log('############### response', response);
 		// console.log('##############initial# response.body', response.body);
 		// console.log('##############initial# response.body.ts', postSurveyResultsJSON.ts);
