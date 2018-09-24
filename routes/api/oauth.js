@@ -8,7 +8,7 @@ router.post('/', (req, res, next) => {
 
 	if (payload.event.type === "message") {
 			let response_text;
-			if (payload.event.text.includes("<@UBJTTTDRT>") && payload.event.text.includes("tell me a joke")) {
+			if (payload.event.text.includes("<@UCYHGRB3M>") && payload.event.text.includes("tell me a joke")) {
 					response_text = `Hello <@${payload.event.username}>! Knock, knock.`
 			}
 			if (payload.event.text.includes("Who's there?")) {
