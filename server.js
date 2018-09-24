@@ -42,6 +42,6 @@ http.createServer(app).listen(port, () => {
 });
 
 
-app.listen(port, () => console.log(
-	`Server Running on Port ${port}`
-));
+// app.listen(port, () => console.log(
+// 	`Server Running on Port ${port}`
+// ));
