@@ -18,13 +18,12 @@ router.post('/', (req, res, next) => {
 	// 	}
 	// )
 
-	console.log('req', req);
-	console.log('req.body', req.body);
+
 
 	
-	// let payload = JSON.parse(req.body);
+	let payload = req.body;
 	// console.log('#### payload', payload);
-	// console.log('#### req.body.payload', payload.payload);
+	console.log('#### payload.token', payload.token);
 	let channelId = payload.event.channel;
 	
 	res.sendStatus(200);
