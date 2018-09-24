@@ -2,8 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-	console.log('#### req', req);
-	res.status(200).send()
+	console.log('#### req.body', req.body);
+	res.status(200).send(
+		{
+			"text": req.body.challenge
+		}
+	)
 } )
 
 
