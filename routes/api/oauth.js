@@ -2,6 +2,9 @@ const express = require('express');
 const request = require('request');
 const router = express.Router();
 
+const slackTokenPath = require('../../config/keys_prod');
+
+
 let payload = '';
 let response_text = '';
 
