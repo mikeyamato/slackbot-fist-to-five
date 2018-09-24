@@ -22,9 +22,9 @@ router.post('/', (req, res, next) => {
 
 	let payload = req.body;
 	let channelId = payload.event.channel;
-
-	res.sendStatus(200);
 	console.log('#### payload', payload);
+	
+	res.sendStatus(200);
 
 	if (payload.event.type === "message") {
 			let response_text;
@@ -60,7 +60,7 @@ function postSurvey(){
 		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
-	const channelPortion = `&channel=${channelId}`;  
+	let channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=*Fist-to-Five Survey*';
 	const textPortionUpdate = '&text=*Fist-to-Five Survey Updated*';
 	const attachmentsPortion = '&attachments='+encodeURIComponent(response_text);
