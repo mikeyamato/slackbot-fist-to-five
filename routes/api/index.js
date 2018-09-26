@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
 	
 	
 	// reset variables
-	if(requestType.text === 'clear'){  
+	if(requestType.text === 'reset'){  
 		channelId = requestType.channel_id;
 		console.log('**** channelId', channelId);
 
@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
 
 		res.status(200).send(
 			{
-				"text": "All clear.\n Now run `/fist-to-five` to start the poll. \n :thumbsup_all:",
+				"text": "All reset.\n Now run `/fist-to-five` to start the poll. \n :thumbsup_all:",
 			}
 		)
 		return null;
