@@ -1,9 +1,7 @@
 // https://api.slack.com/docs/interactive-message-field-guide
 
 module.exports = {
-	"text": "What time is it? It's Fist-to-Five survey time! Yay! :tada:",
-	"attachments": [
-		{
+
 			"title": "How well do you understand this material? \n \n As always, responses are 100% anonymous.\n",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
@@ -47,8 +45,6 @@ module.exports = {
 					}
 				}
 			]
-		}
-	],
-	// "response_type": "in_channel"  // goes to everyone. comment out if it should only go to the person evoking it
+
 }
 
