@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
 
 		// send survey out
 		res.status(200).send(
-			surveyQ
+			postSurvey()
 		)} else {
 			res.status(200).send(
 		{
