@@ -89,6 +89,12 @@ router.post('/', (req, res) => {
 function surveyToClass() {
 
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
+
+	/***** choose one or update with different token *****/
+	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;   
+	// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
+	/*****************************************************/
+	
 	const channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=What time is it? It\'s Fist-to-Five survey time! Yay! :tada:';
 	const attachmentsPortion = '&attachments='+encodeURIComponent([{
