@@ -93,8 +93,8 @@ router.post('/survey', (req, res) => {
 		case 'fist':
 
 			/***** uncomment if you do want to know who *****/
-			recordSurvey["fist"].push(survey.user.name);
-			console.log('*** recordSurvey ***', recordSurvey);
+			// recordSurvey["fist"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -106,8 +106,8 @@ router.post('/survey', (req, res) => {
 		case 'one_finger':
 		
 			/***** uncomment if you do want to know who *****/
-			recordSurvey["one_finger"].push(survey.user.name);
-			console.log('*** recordSurvey ***', recordSurvey);
+			// recordSurvey["one_finger"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -119,8 +119,8 @@ router.post('/survey', (req, res) => {
 		case 'two_fingers':
 			
 			/***** uncomment if you do want to know who *****/
-			recordSurvey["two_fingers"].push(survey.user.name);
-			console.log('*** recordSurvey ***', recordSurvey);
+			// recordSurvey["two_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -132,8 +132,8 @@ router.post('/survey', (req, res) => {
 		case 'three_fingers':
 			
 			/***** uncomment if you do want to know who *****/
-			recordSurvey["three_fingers"].push(survey.user.name);
-			console.log('*** recordSurvey ***', recordSurvey);
+			// recordSurvey["three_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -145,8 +145,8 @@ router.post('/survey', (req, res) => {
 		case 'four_fingers':
 			
 			/***** uncomment if you do want to know who *****/
-			recordSurvey["four_fingers"].push(survey.user.name);
-			console.log('*** recordSurvey ***', recordSurvey);
+			// recordSurvey["four_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -158,8 +158,8 @@ router.post('/survey', (req, res) => {
 		case 'five_fingers':
 
 			/***** uncomment if you do want to know who *****/
-			recordSurvey["five_fingers"].push(survey.user.name);
-			console.log('*** recordSurvey ***', recordSurvey);
+			// recordSurvey["five_fingers"].push(survey.user.name);
+			// console.log('*** recordSurvey ***', recordSurvey);
 			/************************************************/
 
 			res.status(200).send(
@@ -185,8 +185,8 @@ function postSurvey(){
 	const updateMessage = 'https://slack.com/api/chat.update';
 
 	/***** choose one or update with different token *****/
-		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;   
-		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
+		const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;   
+		// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
 	/*****************************************************/
 	
 	const channelPortion = `&channel=${channelId}`;  
