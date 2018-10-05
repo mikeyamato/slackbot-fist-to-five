@@ -86,6 +86,9 @@ router.post('/', (req, res) => {
 				
 /************************************************/
 
+const attachmentPortion = '&attachments='+encodeURIComponent(`[{${surveyQ}}]`);
+
+
 function surveyToClass() {
 
 	const postMessage	= 'https://slack.com/api/chat.postMessage';
@@ -97,9 +100,7 @@ function surveyToClass() {
 	
 	const channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=What time is it? It\'s Fist-to-Five survey time! Yay! :tada:';
-	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one: ${oneFinger} \n two: ${twoFingers} \n three: ${threeFingers} \n four: ${fourFingers} \n five: ${fiveFingers}"}]`);
-
-	const attachmentPortion = '&attachments='+encodeURIComponent(`[{${surveyQ}}]`);
+	// const attachmentPortion = '&attachments='+encodeURIComponent(`[{${surveyQ}}]`);
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
 	const postSurveyResults = {
