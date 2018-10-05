@@ -97,7 +97,9 @@ function surveyToClass() {
 	
 	const channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=What time is it? It\'s Fist-to-Five survey time! Yay! :tada:';
-	const attachmentsPortion = '&attachments='+encodeURIComponent([{
+	const attachmentsPortion = '&attachments='+encodeURIComponent(`[{"pretext": "Results...", "text": "fist: ${fist} \n one: ${oneFinger} \n two: ${twoFingers} \n three: ${threeFingers} \n four: ${fourFingers} \n five: ${fiveFingers}"}]`);
+
+	const attachmentPortion = '&attachments='+encodeURIComponent(`[{
 		"title": "How well do you understand this material? \n \n As always, responses are 100% anonymous.\n",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
@@ -141,11 +143,11 @@ function surveyToClass() {
 					}
 				}
 			]
-	}]);
+	}]`);
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
 	const postSurveyResults = {
-		url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentsPortion+prettyPortion,
+		url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentPortion+prettyPortion,
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json; charset=utf-8',
