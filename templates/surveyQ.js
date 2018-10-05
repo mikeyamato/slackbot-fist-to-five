@@ -1,7 +1,6 @@
 // https://api.slack.com/docs/interactive-message-field-guide
 
 module.exports = {
-
 			"title": "How well do you understand this material? \n \n As always, responses are 100% anonymous.\n",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
@@ -45,6 +44,6 @@ module.exports = {
 					}
 				}
 			]
-
+		
 }
 

@@ -113,7 +113,7 @@ function surveyToClass() {
 	request(postSurveyResults, function (error, response) {
 		
 		console.log('##############initial# error', error);
-		console.log('############## attachments Portion', attachmentsPortion)
+		console.log('############## attachment Portion', attachmentPortion)
 		
 		return;
 	});
