@@ -72,8 +72,8 @@ router.post('/', (req, res) => {
 
 		// send survey out
 		res.status(200).send(
-			// surveyQ
-			surveyToClass()
+			surveyQ
+			// surveyToClass()
 		)
 	} else {
 		res.status(200).send(
@@ -86,80 +86,80 @@ router.post('/', (req, res) => {
 				
 /************************************************/
 
-function surveyToClass() {
+// function surveyToClass() {
 
-	const postMessage	= 'https://slack.com/api/chat.postMessage';
+// 	const postMessage	= 'https://slack.com/api/chat.postMessage';
 
-	/***** choose one or update with different token *****/
-	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;   
-	// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
-	/*****************************************************/
+// 	/***** choose one or update with different token *****/
+// 	const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotTonkotsu;   
+// 	// const slackTokenPortion = '?token=' + slackTokenPath.slackTokenBotUclaBootcamp;  
+// 	/*****************************************************/
 	
-	const channelPortion = `&channel=${channelId}`;  
-	const textPortion = '&text=What time is it? It\'s Fist-to-Five survey time! Yay! :tada:';
-	const attachmentPortion = '&attachments='+encodeURIComponent(`[{
-		"title": "How well do you understand this material? \n \n As always, responses are 100% anonymous.\n",
-		"callback_id": "fist_results",
-		"attachment_type": "default",
-		"color": "#FF9DBB",
-		"actions": [
-			{
-				"name": "fist_select",
-				"text": "Select one...",
-				"type": "select",
-				"options": [
-					{
-						"text": "Fist  (Help, I'm lost)",
-						"value": "fist"
-					},
-					{
-						"text": "1  (I barely understand)",
-						"value": "one_finger"
-					},
-					{
-						"text": "2  (I'm starting to understand)",
-						"value": "two_fingers"
-					},
-					{
-						"text": "3  (I somewhat get it)",
-						"value": "three_fingers"
-					},
-					{
-						"text": "4  (I'm comfortable with the idea)",
-						"value": "four_fingers"
-					},
-					{
-						"text": "5  (I understand this 100%)",
-						"value": "five_fingers"
-					},
-				],
-				"confirm": {
-					"title": "Are you sure?",
-					"text": "Just confirming your selection. :nerd_face:",
-					"ok_text": "Yes, I'm sure",
-					"dismiss_text": "No, I'm not sure"
-				}
-			}
-		]
-	}]`);
-	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
+// 	const channelPortion = `&channel=${channelId}`;  
+// 	const textPortion = '&text=What time is it? It\'s Fist-to-Five survey time! Yay! :tada:';
+// 	const attachmentPortion = '&attachments='+encodeURIComponent(`[{
+// 		"title": "How well do you understand this material? \n \n As always, responses are 100% anonymous.\n",
+// 		"callback_id": "fist_results",
+// 		"attachment_type": "default",
+// 		"color": "#FF9DBB",
+// 		"actions": [
+// 			{
+// 				"name": "fist_select",
+// 				"text": "Select one...",
+// 				"type": "select",
+// 				"options": [
+// 					{
+// 						"text": "Fist  (Help, I'm lost)",
+// 						"value": "fist"
+// 					},
+// 					{
+// 						"text": "1  (I barely understand)",
+// 						"value": "one_finger"
+// 					},
+// 					{
+// 						"text": "2  (I'm starting to understand)",
+// 						"value": "two_fingers"
+// 					},
+// 					{
+// 						"text": "3  (I somewhat get it)",
+// 						"value": "three_fingers"
+// 					},
+// 					{
+// 						"text": "4  (I'm comfortable with the idea)",
+// 						"value": "four_fingers"
+// 					},
+// 					{
+// 						"text": "5  (I understand this 100%)",
+// 						"value": "five_fingers"
+// 					},
+// 				],
+// 				"confirm": {
+// 					"title": "Are you sure?",
+// 					"text": "Just confirming your selection. :nerd_face:",
+// 					"ok_text": "Yes, I'm sure",
+// 					"dismiss_text": "No, I'm not sure"
+// 				}
+// 			}
+// 		]
+// 	}]`);
+// 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
-	const postSurveyResults = {
-		url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentPortion+prettyPortion,
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json; charset=utf-8',
-		}
-	}
+// 	const postSurveyResults = {
+// 		url: postMessage+slackTokenPortion+channelPortion+textPortion+attachmentPortion+prettyPortion,
+// 		method: 'POST',
+// 		headers: {
+// 			'Content-Type': 'application/json; charset=utf-8',
+// 		}
+// 	}
 
-	request(postSurveyResults, function (error, response) {
+// 	request(postSurveyResults, function (error, response) {
 		
-		console.log('##############initial# error', error);
-		console.log('############## attachment Portion', attachmentPortion)
+// 		console.log('##############initial# error', error);
+// 		console.log('############## attachment Portion', attachmentPortion)
 		
-		return;
-	});
-}
+// 		return;
+// 	});
+// }
 
 
 
