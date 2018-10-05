@@ -97,7 +97,7 @@ function surveyToClass() {
 	
 	const channelPortion = `&channel=${channelId}`;  
 	const textPortion = '&text=What time is it? It\'s Fist-to-Five survey time! Yay! :tada:';
-	const attachmentPortion = '&attachments='+encodeURIComponent(`[{
+	const attachmentPortion = '&attachments='+encodeURIComponent([{
 		"title": "How well do you understand this material? \n \n As always, responses are 100% anonymous.\n",
 			"callback_id": "fist_results",
 			"attachment_type": "default",
@@ -141,7 +141,7 @@ function surveyToClass() {
 					}
 				}
 			]
-	}]`);
+	}]);
 	const prettyPortion = '&pretty=1';  // no documentation availble about what this does
 
 	const postSurveyResults = {
